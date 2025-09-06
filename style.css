@@ -74,6 +74,12 @@ body {
     list-style-type: square;
     padding-left: 20px;
 }
+#skills-list li {
+    margin: 5px 0;
+}
+#skills-list ul {
+    max-width: 300px;
+}
 #contact-info {
     margin-top: 20px;
 }
