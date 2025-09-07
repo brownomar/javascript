@@ -3,7 +3,7 @@ html {
 } 
 body {
     line-height: 1.6;
-    background-color: rgb(225, 250, 255);
+    background-color: rgb(161, 216, 227);
     padding: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -66,14 +66,14 @@ footer p a:hover {
 }
 /* id styling*/
 #backgroundchange {
-    background-color: rgb(195, 251, 171);
+    background-color: rgb(171, 251, 248);
     border: 1px solid rgb(0, 0, 0);
     text-decoration: none;
     padding: 16px;
     border-radius: 8px;
 }
 #top-nav {
-    background-color: #005582;
+    background-color: rgb(171, 251, 248);
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid rgb(0, 0, 0);
