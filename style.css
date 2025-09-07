@@ -11,11 +11,11 @@ body {
 }
 main {
     margin: 100px;
+    background-color: aliceblue;
 }
 section {
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color: aliceblue;
 }
 
 h1 {
