@@ -82,16 +82,6 @@ footer {
     text-decoration: underline;
 }
 
-#skills-list {
-    list-style-type: square;
-    padding-left: 20px;
-}
-#skills-list ul {
-    max-width: 300px;
-}
-#skills-list li {
-    margin: 5px 0;
-}
 
 #contact-info  {
     margin: 5px 0;
