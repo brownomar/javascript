@@ -84,7 +84,7 @@ footer p a:hover {
     background-color: beige;
 }
 
--- Responsive Design --
+/* Responsive Design */
 
 @media (max-width: 600px) {
     body {
