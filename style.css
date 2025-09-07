@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 } 
 body {
-    line-height: 1.6;
+    line-height: 1.5;
     background-color: rgb(161, 216, 227);
     padding: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -24,6 +24,9 @@ h3 {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
 }
+main {
+    margin: 40px;
+}
 picture {
     width: 40%;
     height: auto;
@@ -36,7 +39,7 @@ p {
 }
 
 nav a {
-    color: rgb(255, 251, 0);
+    color: rgb(211, 103, 41);
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -88,7 +91,29 @@ footer p a:hover {
     color: rgb(193, 182, 255);
     text-decoration: underline;
 }
+#side-nav {
+    float: left;
+    background-color: rgb(171, 251, 248);
+    padding: 10px;
+    text-align: left;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin: 8px;
+    position: sticky;
+    top: 100px;
+}
+#side-nav a {
+    display: block;
+    margin-bottom: 10px;
+}
+#side-nav a:hover {
+    color: rgb(193, 182, 255);
+    text-decoration: underline;
+}
 
+
+/* class styling */
 .somepadding {
     padding: 16px;
 }
