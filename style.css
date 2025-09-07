@@ -4,19 +4,12 @@ html {
 body {
     font-size: 16px;
     line-height: 1.6;
-    background-color: rgb(111, 228, 248);
+    background-color: rgb(225, 250, 255);
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-main {
-    margin: 24px;
-}
-section {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: aliceblue;
-}
+
 
 h1 {
     font-size: 2.5em;
@@ -39,7 +32,7 @@ p {
 }
 
 nav a {
-    color: rgb(66, 1, 1);
+    color: rgb(255, 251, 0);
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -50,15 +43,15 @@ nav a:hover {
 footer {
     color: rgb(0, 0, 0);
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: small;
     border-top: 1px solid rgb(0, 0, 0);
     margin: 16px;
     padding-top: 10px;
 }  
 
 footer p  {
-    margin: 5px 0;
+    font-family: cursive;
+    font-size: 0.9em;
+    margin: 4px;
     text-decoration: none;
 }
 footer p a:hover {
@@ -66,7 +59,12 @@ footer p a:hover {
     text-decoration: underline;
     background-color: salmon;
 }
-
+#backgroundchange {
+    background-color: rgb(193, 182, 255);
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
 #top-nav {
     background-color: #012c43;
     padding: 10px;
@@ -77,12 +75,13 @@ footer p a:hover {
     margin-right: 15px;
 }
 #top-nav a:hover {
-    color: rgb(18, 0, 117);
+    color: rgb(193, 182, 255);
     text-decoration: underline;
 }
 
 .somepadding {
-    padding: 15px;
+    padding: 16px;
+    background-color: beige;
 }
 
 -- Responsive Design --
@@ -90,6 +89,10 @@ footer p a:hover {
 @media (max-width: 600px) {
     body {
         font-size: 14px;
+    }
+    picture {
+        width: 30%;
+        height: auto;
     }
     main {
         margin: 20px;
