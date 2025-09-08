@@ -38,6 +38,22 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+nav {
+    background-color: rgb(171, 251, 248);
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav li {
+    display: inline;
+    margin-right: 10px;
+    text-decoration: none;
+}
 nav a {
     color: rgb(211, 103, 41);
     text-decoration: none;
@@ -84,6 +100,12 @@ footer p a:hover {
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+#top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
 #top-nav a {
     margin-right: 15px;
 }
@@ -98,6 +120,8 @@ footer p a:hover {
     text-align: left;
     border-right: 1px solid rgb(0, 0, 0);
     width: 150px;
+    height: 100%;
+    position: sticky;
 }
 #side-nav ul {
   list-style-type: none;
