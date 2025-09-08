@@ -25,7 +25,10 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
 main {
-    margin: 40px;
+    margin-top: 80px;
+    margin-right: 220px;
+    padding: 8px;
+    background: rgb(171, 251, 248); 
 }
 picture {
     width: 40%;
@@ -64,12 +67,13 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* footer styling */
 footer {
-    color: rgb(0, 0, 0);
-    text-align: justify;
-    border-top: 1px solid rgb(0, 0, 0, 0.5);
-    margin: 16px;
-    padding-top: 10px;
+    text-align: center;
+    border-top: 2px solid rgb(0, 0, 0, 0.5);
+    margin-top: 16px;
+    padding: 8px;
+    background: lightblue;
 }  
 footer p  {
     font-family: cursive;
@@ -81,6 +85,7 @@ footer p a:hover {
     text-decoration: underline;
     background-color: salmon;
 }
+
 /* id styling*/
 #backgroundchange {
     background-color: rgb(171, 251, 248);
@@ -89,52 +94,68 @@ footer p a:hover {
     padding: 16px;
     border-radius: 8px;
 }
+/* Top Navigation Bar */
 #top-nav {
-    background-color: rgb(171, 251, 248);
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    margin-bottom: 20px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    background: linear-gradient(to right, #b3d9ff, #0059b3);
+    top:0;
+    left:0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 #top-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
-#top-nav a {
-    margin-right: 15px;
+#top-nav ul li {
+    margin-right: 4px;
 }
-#top-nav a:hover {
+#top-nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+#top-nav ul li a:hover {
     color: rgb(193, 182, 255);
     text-decoration: underline;
 }
+
+/* Side Navigation Bar */
 #side-nav {
-    float: left;
-    background-color: rgb(171, 251, 248);
-    padding: 10px;
-    text-align: left;
-    border-right: 1px solid rgb(0, 0, 0);
-    width: 150px;
+    top: 60px;
+    right: 0;
+    background:linear-gradient(to bottom, #b3d9ff, #0059b3);
+    overflow-y: auto;
+    padding-top: 10px;
+    border-left: 1px solid rgb(0, 0, 0);
+    width: 200px;
     height: 100%;
-    position: sticky;
+    position: fixed;
 }
 #side-nav ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
 }
-#side-nav a {
-    display: block;
-    margin-bottom: 10px;
+#side-nav ul li {
+    margin-bottom: 8px;
 }
-#side-nav a:hover {
-    color: rgb(193, 182, 255);
-    text-decoration: underline;
+
+#side-nav ul li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+#side-nav ul li a:hover {
+    background: rgb(193, 182, 255);
+    color: white;
 }
 
 
