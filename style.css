@@ -32,7 +32,7 @@ main {
     background: rgb(171, 251, 248); 
 }
 picture {
-    width: 40%;
+    width: auto;
     height: auto;
 }
 p {
@@ -90,8 +90,8 @@ footer p a:hover {
 
 /* id styling*/
 #backgroundchange {
-    background-color: rgb(171, 251, 248);
-    border: 1px solid rgb(0, 0, 0);
+    background-color:#a1d8e3;
+    border: 1px solid rgb(249, 130, 130);
     text-decoration: none;
     padding: 16px;
     border-radius: 8px;
