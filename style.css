@@ -128,11 +128,11 @@ footer p a:hover {
 /* Side Navigation Bar */
 #side-nav {
     top: 60px;
-    right: 0;
+    left: 0;
     background:linear-gradient(to bottom, #b3d9ff, #0059b3);
     overflow-y: auto;
     padding-top: 10px;
-    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
     width: 200px;
     height: 100%;
     position: fixed;
@@ -154,7 +154,7 @@ footer p a:hover {
     transition: background 0.3s ease, color 0.3s ease;
 }
 #side-nav ul li a:hover {
-    background: rgb(193, 182, 255);
+    background: rgb(44, 90, 255);
     color: white;
 }
 
