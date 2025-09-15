@@ -32,8 +32,12 @@ main {
     background: rgb(171, 251, 248); 
 }
 picture {
-    width: auto;
+    width: 40%;
     height: auto;
+    float: right;
+    margin: 0 0 8px 8px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
 }
 p {
     font-size: 1em;
@@ -183,12 +187,12 @@ footer p a:hover {
     
     /* Adjust main content to use full width when side nav is hidden */
     main {
-        margin-left: 20px; /* Remove the 220px left margin */
+        margin-left: 20px; /* Remove left margin */
         margin-top: 60px; /* Adjust for just the top nav */
     }
     
     footer {
-        margin-left: 0; /* Remove the left margin on footer too */
+        margin-left: 0; /* Remove the left margin on footer*/
     }
 }
 
