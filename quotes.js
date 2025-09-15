@@ -12,17 +12,20 @@ document.write(quote);
 /*array of three website URLs*/
 let threeUrls = ["<a href=\"https://www.google.com\">Google</a>", "<a href=\"https://www.facebook.com\">Facebook</a>", "<a href=\"https://www.twitter.com\">Twitter</a>"];
 
+/*write revised array to screen*/
+document.write("<br>" + threeUrls);
+
+/*remove first website from array*/
+threeUrls.pop();
+
 /*prompt for user's favorite website*/
 let userFav = prompt ("Please enter your favorite website");
 
 /*add user's favorite website to the end of the array*/
-threeUrls.push("User's favorite website");
+threeUrls.push(userFav);
 
 /*test array for output in console*/
 console.log(threeUrls);
-
-/*remove first website from array*/
-threeUrls.pop();
 
 /*write revised array to screen*/
 document.write("<br>" + threeUrls);
