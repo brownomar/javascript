@@ -193,3 +193,79 @@ footer p a:hover {
         font-size: 1.5em;
     }
 }
+@media (max-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+    picture {
+        width: 20%;
+        height: auto;
+    }
+    main {
+        margin: 10px;
+        padding: 4px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 300px) {
+    body {
+        font-size: 10px;
+    }
+    picture {
+        width: 15%;
+        height: auto;
+    }
+    main {
+        margin: 5px;
+        padding: 2px;
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+}
+@media (max-width: 200px) {
+    body {
+        font-size: 8px;
+    }
+    picture {
+        width: 10%;
+        height: auto;
+    }
+    main {
+        margin: 2px;
+        padding: 1px;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 100px) {
+    body {
+        font-size: 6px;
+    }
+    picture {
+        width: 5%;
+        height: auto;
+    }
+    main {
+        margin: 1px;
+        padding: 0.5px;
+    }
+    h1 {
+        font-size: 0.8em;
+    }
+    h2 {
+        font-size: 0.6em;
+    }
+}
