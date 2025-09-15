@@ -175,7 +175,7 @@ footer p a:hover {
 
 /* Responsive Design */
 
-@media (max-width: 600px) {
+@media (max-width:768px) {
     body {
         font-size: 14px;
     }
@@ -213,6 +213,10 @@ footer p a:hover {
     }
 }
 @media (max-width: 300px) {
+    #side-nav {
+        display: none;
+    }
+    
     body {
         font-size: 10px;
     }
@@ -232,6 +236,9 @@ footer p a:hover {
     }
 }
 @media (max-width: 200px) {
+     #side-nav {
+        display: none;
+    }
     body {
         font-size: 8px;
     }
@@ -251,6 +258,9 @@ footer p a:hover {
     }
 }
 @media (max-width: 100px) {
+     #side-nav {
+        display: none;
+    }
     body {
         font-size: 6px;
     }
