@@ -20,7 +20,7 @@ threeUrls.pop();
 
 /*prompt for user's favorite website*/
 let userFav = prompt ("Please enter your favorite website");
-
+userFav = "<a href=\"" + userFav + "\">" + userFav + "</a>";
 /*add user's favorite website to the end of the array*/
 threeUrls.push(userFav);
 
