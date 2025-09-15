@@ -6,7 +6,7 @@ let remainIndex = userNumber % 5;
 /*select quote based on user number*/
 let quote = fiveQuotes[remainIndex];
 /*write the quote to the screen*/
-document.write(quote);
+document.write("\""+quote+"\"");
 
 
 /*array of three website URLs*/
