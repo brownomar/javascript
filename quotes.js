@@ -28,4 +28,4 @@ threeUrls.push(userFav);
 console.log(threeUrls);
 
 /*write revised array to screen*/
-document.write("Updated List: <br>" + threeUrls);
+document.write("<br>Updated List: <br>" + threeUrls);
