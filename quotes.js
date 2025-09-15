@@ -16,7 +16,7 @@ let threeUrls = ["<a href=\"https://www.google.com\">Google</a>", "<a href=\"htt
 let userFav = prompt ("Please enter your favorite website");
 
 /*add user's favorite website to the end of the array*/
-threeUrls.push(userFav);
+threeUrls.push("User's favorite website");
 
 /*test array for output in console*/
 console.log(threeUrls);
