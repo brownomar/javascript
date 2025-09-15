@@ -8,6 +8,7 @@ let quote = fiveQuotes[remainIndex];
 /*write the quote to the screen*/
 document.write(quote);
 
+
 /*array of three website URLs*/
 let threeUrls = ["<a href=\"https://www.google.com\">Google</a>", "<a href=\"https://www.facebook.com\">Facebook</a>", "<a href=\"https://www.twitter.com\">Twitter</a>"];
 
@@ -21,7 +22,7 @@ threeUrls.push(userFav);
 console.log(threeUrls);
 
 /*remove first website from array*/
-threeUrls.pop(0);
+threeUrls.pop();
 
 /*write revised array to screen*/
 document.write("<br>" + threeUrls);
