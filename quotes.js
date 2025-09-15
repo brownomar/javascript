@@ -16,7 +16,7 @@ let threeUrls = ["<a href=\"https://www.google.com\">Google</a>", "<a href=\"htt
 document.write("<br>" + threeUrls);
 
 /*remove first website from array*/
-threeUrls.splice(0);
+threeUrls.shift();
 
 /*prompt for user's favorite website*/
 let userFav = prompt ("Please enter your favorite website");
