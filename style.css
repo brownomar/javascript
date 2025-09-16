@@ -181,7 +181,7 @@ footer p a:hover {
 @media (max-width: 768px) {
     /* This should make the background red to test if media query works */
     body {
-        background-color: red !important;
+        background-color: #a1e0eb !important;
     }
     
     /* Completely override side nav positioning */
