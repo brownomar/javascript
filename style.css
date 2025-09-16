@@ -182,7 +182,6 @@ footer p a:hover {
 @media (max-width: 768px) {
     /* move side nav to bottom */
     #side-nav {
-        position: fixed;
         width: 100%;
         height: auto;
         background: inherit;
