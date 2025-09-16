@@ -199,7 +199,8 @@ footer p a:hover {
         z-index: 9999 !important;
         padding: 0 !important;
         padding-top: 0 !important;
-        overflow-y: visible !important;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1) !important;
+        overflow-y: scroll !important;
     }
     
     #side-nav ul {
