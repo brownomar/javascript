@@ -12,15 +12,18 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
 }
 document.write("Your guess: " + guessNumber + "<br>");
 
+let x=1;
 
 // Main game loop - continues until userScore reaches 10
-while (userScore < 10) {
+while (x < 10) {
 if (Number(guessNumber) === secretNumber) {
     alert("Congratulations! You guessed the secret number!");
     userScore += 10;
     alert("Your score is: " + userScore+" points. You win!");
 } else {
     alert("Sorry, that was not the secret number. Try again!");
+    x++;
+    guessNumber = prompt("Guess a number between 1 and 5. Make sure its a number between 1 and 5!" );
 }
 }
 document.write("The secret number was: " + secretNumber + "<br>");
