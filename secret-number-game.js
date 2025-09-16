@@ -1,9 +1,10 @@
 let secretNumber = 4;
 let userScore = 0;
-let guessNumber = 0;
+let guessedNumber;
+
 // Input validation to ensure user enters a number between 1 and 5
 while (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
-let guessNumber = prompt("Guess a number between 1 and 5. Make sure its a number!" );
+let guessNumber = prompt("Guess a number between 1 and 5. Make sure its a number between 1 and 5!" );
 }
 
 // Main game loop - continues until userScore reaches 10
