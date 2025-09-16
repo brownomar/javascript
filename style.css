@@ -184,7 +184,7 @@ footer p a:hover {
     #side-nav {
         position: fixed;
         width: 100%;
-        height: auto;
+        height: 10%;
         background: inherit;
         bottom: 0;
         left: 0;
