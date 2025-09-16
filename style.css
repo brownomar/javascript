@@ -177,9 +177,9 @@ footer p a:hover {
     padding: 16px;
 }
 
-/* DEBUG: Test if media query is working at all */
+/* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
-    /* This should make the background red to test if media query works */
+    /* Change body background color */
     body {
         background-color: #a1e0eb !important;
     }
