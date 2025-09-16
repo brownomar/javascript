@@ -176,47 +176,74 @@ footer p a:hover {
 .somepadding {
     padding: 16px;
 }
-/* Responsive Design */
+//* Responsive Design */
 
 @media (max-width: 768px) {
-    /* move side nav to bottom */
+    /* Completely reset and reposition side nav to bottom */
     #side-nav {
-        position: fixed;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        background: inherit;
-        bottom: 0;
-        z-index: 1000;
-        padding: 10px 0;
+        /* Reset desktop positioning */
+        top: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        
+        /* New bottom positioning */
+        position: fixed !important;
+        bottom: 0 !important;
+        z-index: 1001;
+        
+        /* Styling */
+        background: linear-gradient(to right, #b3d9ff, #0059b3) !important;
+        padding: 8px 0 !important;
+        border-right: none !important;
+        border-top: 1px solid rgb(0, 0, 0);
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        overflow-y: visible !important;
+        padding-top: 8px !important;
     }
+    
+    /* Make navigation horizontal */
     #side-nav ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
-    #side-nav li {
+    
+    #side-nav ul li {
         flex: 1;
         text-align: center;
+        margin-bottom: 0 !important;
     }
-    #side-nav a {
+    
+    #side-nav ul li a {
         display: block;
+        color: rgb(255, 255, 255);
         text-decoration: none;
-        padding: 10px;
-        font-size: 1em;
+        padding: 6px 4px !important;
+        font-weight: bold;
+        font-size: 0.9em;
+        transition: background 0.3s ease, color 0.3s ease;
     }
+    
+    #side-nav ul li a:hover {
+        background: rgb(44, 90, 255);
+        color: white;
+    }
+    
+    /* Adjust main content */
     main {
-        margin: 60px 0 70px 20px;
+        margin: 60px 20px 70px 20px !important;
     }
-    /*remove left margin from footer and no overlap*/
+    
+    /* Adjust footer */
     footer {
-        margin-left: 0;
-        margin-bottom: 70px;
+        margin-left: 0 !important;
+        margin-bottom: 70px !important;
     }
 }
 
@@ -229,7 +256,7 @@ footer p a:hover {
         height: auto;
     }
     main {
-        margin: 60px 20px 70px 20px; /* increase bottom margin */
+        margin: 60px 20px 70px 20px !important;
     }
     h1 {
         font-size: 1.8em;
@@ -237,14 +264,16 @@ footer p a:hover {
     h2 {
         font-size: 1.5em;
     }
-    /* Adjust bottom nav styling */
-    #side-nav a {
-        font-size: 12px;
-        padding: 6px 2px;
+    
+    /* Smaller text for bottom nav */
+    #side-nav ul li a {
+        font-size: 0.8em !important;
+        padding: 5px 2px !important;
     }
+    
     footer {
-        margin-left: 0;
-        margin-bottom: 70px;
+        margin-left: 0 !important;
+        margin-bottom: 70px !important;
     }
 }
 
@@ -257,7 +286,7 @@ footer p a:hover {
         height: auto;
     }
     main {
-        margin: 50px 10px 70px 10px;
+        margin: 50px 10px 70px 10px !important;
         padding: 4px;
     }
     h1 {
@@ -266,17 +295,19 @@ footer p a:hover {
     h2 {
         font-size: 1.2em;
     }
+    
     #side-nav {
-        padding: 8px 0;
+        padding: 6px 0 !important;
     }
         
-    #side-nav a {
-        font-size: 11px;
-        padding: 4px 1px;
+    #side-nav ul li a {
+        font-size: 0.7em !important;
+        padding: 4px 1px !important;
     }
+    
     footer {
-        margin-left: 0;
-        margin-bottom: 60px;
+        margin-left: 0 !important;
+        margin-bottom: 65px !important;
     }
 }
 
@@ -289,7 +320,7 @@ footer p a:hover {
         height: auto;
     }
     main {
-        margin: 40px 5px 60px 5px;
+        margin: 40px 5px 65px 5px !important;
         padding: 2px;
     }
     h1 {
@@ -299,12 +330,13 @@ footer p a:hover {
         font-size: 1em;
     }
     
-    #side-nav a {
-        font-size: 10px;
-        padding: 3px 1px;
+    #side-nav ul li a {
+        font-size: 0.6em !important;
+        padding: 3px 1px !important;
     }
+    
     footer {
-        margin-left: 0;
-        margin-bottom: 50px;
+        margin-left: 0 !important;
+        margin-bottom: 60px !important;
     }
 }
