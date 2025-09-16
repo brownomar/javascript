@@ -1,11 +1,17 @@
 let secretNumber = 4;
 let userScore = 0;
-let guessedNumber;
 
 // Input validation to ensure user enters a number between 1 and 5
-while (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
+
 let guessNumber = prompt("Guess a number between 1 and 5. Make sure its a number between 1 and 5!" );
+if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
+    alert("Nope. Try again. Please enter a number between 1 and 5.");
+    guessNumber = prompt("Guess a number between 1 and 5. Make sure its a number between 1 and 5!" );
+}else {
+    alert("Thanks for entering a valid number. Let's see if you guessed the secret number!");
 }
+document.write("Your guess: " + guessNumber + "<br>");
+
 
 // Main game loop - continues until userScore reaches 10
 while (userScore < 10) {
