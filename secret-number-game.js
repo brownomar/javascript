@@ -10,11 +10,11 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     continue; // Prompt the user again
     }
     else if (guessNumber < secretNumber) {
-        userScore = userScore - 2;
+        userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too low.<br>");
     } 
     else if (guessNumber > secretNumber) {
-        userScore = userScore - 2;
+        userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
     }
     else (guessNumber == secretNumber); {
