@@ -1,6 +1,6 @@
 let secretNumber = 4;
 let userScore = 0;
-var guessNumber;
+
 // Loop until the user guesses the correct number
 while (guessNumber != secretNumber) {
     let guessNumber = prompt("Guess my favorite number between 1 and 5. Make sure its a number 1 - 5!" );
