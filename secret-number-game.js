@@ -9,10 +9,19 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     document.write("You guessed: " + guessNumber + " ...which was wrong.<br>");
     continue; // Prompt the user again
     }
-    else if (guessNumber == secretNumber) {
+    else if (guessNumber < secretNumber) {
+        userScore = userScore - 2;
+        document.write("You guessed: " + guessNumber + " ...which was too low.<br>");
+    } 
+    else if (guessNumber > secretNumber) {
+        userScore = userScore - 2;
+        document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
+    }
+    else (guessNumber == secretNumber); {
         userScore = userScore + 10;
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
         document.write("Your final score is: " + userScore + " points.<br> Game Over, Man!");
-        break; // Exit the loop if the guess is correct
+        break; // Exit the loop if the guess is correct 
     }
+
 }
