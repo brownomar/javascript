@@ -14,12 +14,13 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
         document.write("You guessed: " + guessNumber + " ...which was too low.<br>");
         console.log(secretNumber);
     } 
-    else if (guessNumber > secretNumber) {
+    else (guessNumber > secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
         console.log(secretNumber);
     }
-    else (guessNumber == secretNumber); {
+   
+    if (guessNumber == secretNumber); {
         alert("Perfect! You guessed my favorite number!");
         userScore = userScore + 10;
         document.write("...lol, then you guessed  " + guessNumber + " ...which was correct!<br>");   
