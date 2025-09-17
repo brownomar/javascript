@@ -18,7 +18,9 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
         continue; // Continue to the next iteration if the guess is incorrect
     }
     else (guessNumber == secretNumber); {
+        alert("Perfect! You guessed my favorite number!");
         userScore = userScore + 10;
+        document.write("...and then you guessed  " + guessNumber + " ...which was correct!<br>");   
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
         document.write("Your final score is: " + userScore + " points.<br> Game Over, Man!");
         break; // Exit the loop if the guess is correct 
