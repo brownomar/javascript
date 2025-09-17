@@ -7,7 +7,6 @@ while (guessNumber != secretNumber) {
 if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     alert("Please enter a valid number between 1 and 5.");
     document.write("You guessed: " + guessNumber + " ...which was wrong.<br>");
-    continue; // Prompt the user again
     }
     else if (guessNumber < secretNumber) {
         userScore = userScore;
@@ -16,6 +15,7 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     else if (guessNumber > secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
+        continue; // Continue to the next iteration if the guess is incorrect
     }
     else (guessNumber == secretNumber); {
         userScore = userScore + 10;
