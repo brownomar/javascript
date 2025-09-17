@@ -10,7 +10,7 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     continue; // Prompt the user again
     }
     else if (guessNumber == secretNumber) {
-        let userScore = userScore + 10;
+        userScore = userScore + 10;
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
         document.write("Your final score is: " + userScore + " points.<br> Game Over, Man!");
         break; // Exit the loop if the guess is correct
