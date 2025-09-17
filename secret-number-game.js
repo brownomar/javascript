@@ -15,7 +15,6 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     else if (guessNumber > secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
-        continue; // Continue to the next iteration if the guess is incorrect
     }
     else (guessNumber == secretNumber); {
         alert("Perfect! You guessed my favorite number!");
