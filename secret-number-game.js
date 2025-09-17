@@ -7,21 +7,24 @@ while (guessNumber != secretNumber) {
 if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     alert("Please enter a valid number between 1 and 5.");
     document.write("You guessed: " + guessNumber + " ...which was wrong.<br>");
+    console.log(secretNumber);
     }
     else if (guessNumber < secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too low.<br>");
+        console.log(secretNumber);
     } 
     else if (guessNumber > secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
+        console.log(secretNumber);
     }
     else (guessNumber == secretNumber); {
         alert("Perfect! You guessed my favorite number!");
         userScore = userScore + 10;
-        document.write("...and then you guessed  " + guessNumber + " ...which was correct!<br>");   
+        document.write("...lol, then you guessed  " + guessNumber + " ...which was correct!<br>");   
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
-        document.write("Your final score is: " + userScore + " points.<br> Game Over, Man!");
+        document.write("Your final score is: " + userScore + " points.<br> Game Over.");
         break; // Exit the loop if the guess is correct 
     }
 
