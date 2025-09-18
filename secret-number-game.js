@@ -25,7 +25,7 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
         userScore = userScore + 10;
         document.write("...lol, then you guessed  " + guessNumber + " ...which was correct!<br>");   
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
-        document.write("Your final score is: " + userScore + " points.<br> Game Over.");
+        document.write("Your final score is: " + userScore + " points.<br><strong> Game Over.</strong>");
         break; // Exit the loop if the guess is correct 
     }
 
