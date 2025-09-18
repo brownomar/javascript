@@ -3,7 +3,7 @@ let guessNumber = 0
 let userScore = 0;
 // Loop until the user guesses the correct number
 while (guessNumber != secretNumber) {
-    let guessNumber = prompt("Guess my favorite number between 1 and 5. Make sure its a number 1 - 5!" );
+    let guessNumber = prompt("Guess my secret number between 1 and 5. Make sure its a number 1 - 5!" );
 if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     alert("Please enter a valid number between 1 and 5.");
     document.write("You guessed: " + guessNumber + " ...which was wrong.<br>");
@@ -23,7 +23,7 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     }
    
     else {
-        alert("Perfect! You guessed my favorite number!");
+        alert("Perfect! You guessed my secret number!");
         userScore = userScore + 10;
         document.write("...lol, then you guessed  " + guessNumber + " ...which was correct!<br>");   
         document.write("Congratulations! The secret number was: " + secretNumber + "!<br>");
