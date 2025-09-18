@@ -12,11 +12,13 @@ if (guessNumber < 1 || guessNumber > 5 || isNaN(guessNumber)) {
     else if (guessNumber < secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too low.<br>");
+        alert("Sorry. Too low. No points awarded. Your score is: "+ userScore);
         console.log(secretNumber);
     } 
     else if (guessNumber > secretNumber) {
         userScore = userScore;
         document.write("You guessed: " + guessNumber + " ...which was too high.<br>");
+        alert("Sorry. Too high. No points awarded. Your score is: "+ userScore);
         console.log(secretNumber);
     }
    
