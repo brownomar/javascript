@@ -12,12 +12,12 @@ var answerArray = [answer1, answer2, answer3, answer4];
 
 for (let x = 0; x < questionArray.length; x++) {
 	// Q&A time
-    let userAnswer = prompt(questionArray[x]);
+    let userAnswer = prompt(questionArray[x]).toLowerCase();
     if (userAnswer === answerArray[x]) {
-        alert ("correct.");
+        alert ("That is correct!");
     }
     else {
-        alert ("try again.");
+        alert ("No. Try again.");
         x-=1;
     }
 
