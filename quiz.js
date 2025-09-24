@@ -10,4 +10,14 @@ let answer4 = "Answer 4";
 var questionArray = [question1, question2, question3, question4];
 var answerArray = [answer1, answer2, answer3, answer4];
 
-for (questionArray)
+for (let x = 0; x < questionArray.length; x++) {
+	// Q&A time
+    let userAnswer = prompt(questionArray[x]);
+    if (userAnswer === answerArray[x]) {
+        alert ("correct.");
+    }
+    else {
+        alert ("try again.");
+    }
+
+}
