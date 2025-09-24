@@ -18,6 +18,7 @@ for (let x = 0; x < questionArray.length; x++) {
     }
     else {
         alert ("try again.");
+        x=0;
     }
 
 }
