@@ -14,9 +14,11 @@ for (let x = 0; x < questionArray.length; x++) {
 	// Q&A time
     let userAnswer = prompt(questionArray[x]);
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
+        document.write("You answered "+ userAnswer+", which was correct!");
         alert ("That is correct!");
     }
     else {
+        document.write("You answered " + userAnswer + " which was wrong.");
         alert ("No. Try again.");
         x-=1;
     }
