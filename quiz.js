@@ -50,5 +50,3 @@ while (x < questionArray.length) {
         alert ("No. You have "+tryCount+" more tries.");
     }
 }
-
-}
