@@ -1,26 +1,57 @@
 let question1 = "What is the answer to question 1?";
 let question2 = "What is the answer to question 2?";
 let question3 = "What is the answer to question 3?";
-let question4 = "What is the answer to question 4?";
 let answer1 = "Answer 1";
 let answer2 = "Answer 2";
 let answer3 = "Answer 3";
-let answer4 = "Answer 4";
+let userScore = 0;
+var tryCount;
+var questionArray = [question1, question2, question3];
+var answerArray = [answer1, answer2, answer3];
 
-var questionArray = [question1, question2, question3, question4];
-var answerArray = [answer1, answer2, answer3, answer4];
+//counter for answer attempts
+function tryCounter () {
+    tryCount=-1;
+    return tryCount;
+}
 
+//game over if tries exceeded
+function tryExceeded (tryCount) {
+    if (tryCount < 1){
+        alert("You have exceeded the number of failed attempts.<br> Your score is "+userScore+". Game over.");
+    }
+    else {
+        return;
+    }
+}
+
+//quiz loop
 for (let x = 0; x < questionArray.length; x++) {
 	// Q&A time
     let userAnswer = prompt(questionArray[x]);
-    if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
+    //check question against answer
+        if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
+        // if they got it correct 
         document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
-        alert ("That is correct!");
+        alert ("That is correct! You get 1 point!");
+        //give them a point
+        userScore =+ 1;
+        //leave trys at 3
     }
-    else {
+    else { 
+        //decrement try counter
+        tryCounter (tryCount);
+        //check for game over
+        tryExceeded (tryCount);
+        //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
-        alert ("No. Try again.");
+        alert ("No. You have "+tryCount+" more tries.");
+        //ask the question they got wrong again
         x-=1;
+        
+        
+        //check to see if tries exceed 3 and end if so. use break and alert to exit loop.
+
     }
 
 }
