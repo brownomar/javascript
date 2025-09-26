@@ -48,5 +48,6 @@ while (x < questionArray.length) {
         //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
         alert ("No. You have "+tryCount+" more tries.");
+        break;
     }
 }
