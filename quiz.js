@@ -26,7 +26,7 @@ function tryExceeded () {
         return x;
     }
     else {
-        continue;
+        return;
     }
 }
 
