@@ -13,6 +13,7 @@ var answerArray = [answer1, answer2, answer3];
 //counter for answer attempts
 function tryCounter () {
     tryCount=tryCount - 1;
+    alert ("No. You have "+tryCount+" more tries.");
     return tryCount;
 }
 
@@ -20,9 +21,12 @@ function tryCounter () {
 function tryExceeded () {
     if (tryCount < 1){
         alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
+        document.write("Your points: "+userScore+" Game Over.");
+        let x=4;
+        return x;
     }
     else {
-        return;
+        continue;
     }
 }
 
@@ -34,20 +38,18 @@ while (x < questionArray.length) {
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
         document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
-        alert ("That is correct! You get 1 point! You have "+userScore+" points.");
         //give them a point
         userScore ++;
-        //leave trys at 3
+        alert ("That is correct! You get 1 point! You have "+userScore+" points.");
         x++; // increment to move to next question
     }
     else { 
         //decrement try counter
         tryCounter (tryCount);
-        //check for game over
-        tryExceeded (tryCount, userScore);
         //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
-        alert ("No. You have "+tryCount+" more tries.");
-        break;
+        
+        //check for game over
+        tryExceeded (tryCount, userScore);
     }
-}
+    }
