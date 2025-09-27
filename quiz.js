@@ -26,19 +26,16 @@ function tryExceeded () {
         return x;
     }
     }
-}
+
 
 //compare user answer to correct answer
-function checkAnswer (userAnswer, x) {
+function checkAnswer () {
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
         document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
         //give them a point
         userScore ++;
         alert ("That is correct! You get 1 point! You have "+userScore+" points.");
-        x++; // increment to move to next question
-        console.log(x);
-        return x;
     }
     else { 
         //decrement try counter
@@ -63,7 +60,11 @@ while (x < questionArray.length) {
     let userAnswer = prompt(questionArray[x]);
     //check question against answer
     checkAnswer (userAnswer, x);
+    //increment loop counter
+    x++;
+    
     //check if try limit exceeded
     tryExceeded (tryCount, userScore, questionArray);
+    
     console.log(x);
     }
