@@ -32,7 +32,7 @@ function tryExceeded () {
 function checkAnswer (userAnswer) {
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
-        document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
+        document.write("On question "+x+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
         //give them a point
         userScore ++;
         alert ("That is correct! You get 1 point! You have "+userScore+" points.");
@@ -41,7 +41,7 @@ function checkAnswer (userAnswer) {
         //decrement try counter
         tryCounter (tryCount);
         //communicate status of game
-        document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
+        document.write("On question "+x+", you answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
         //negate loop increment
         x--;
         return x;
