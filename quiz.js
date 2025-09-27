@@ -20,7 +20,7 @@ function tryCounter () {
 function tryExceeded () {
     if (tryCount < 1){
         alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
-        document.write("Your points: "+userScore+" Game Over.<br><br> Let's go again!<br>");
+        document.write("Your points: "+userScore+" Game Over.<br><br> Refresh to go again!<br>");
         let x=4;
         return x;
     }
