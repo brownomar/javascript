@@ -58,7 +58,8 @@ for (let i=0; i<questionArray.length; i++) {
 
 //loop counter variable
 let x = 0;
-//quiz loop
+
+//main quiz loop
 while (x < questionArray.length) {
     // Q&A time
     let userAnswer = prompt(questionArray[x]);
