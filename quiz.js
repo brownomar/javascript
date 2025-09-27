@@ -76,4 +76,4 @@ while (x < questionArray.length) {
     console.log(x);
     }
 //final score display
-document.write("<strong>Your final score is "+userScore+" out of "+questionArray.length+".</strong><br><br> Refresh to go again!<br>");
+document.write("<h2><strong>Your final score is "+userScore+" out of "+questionArray.length+".</strong></h2><br><br> Refresh to go again!<br>");
