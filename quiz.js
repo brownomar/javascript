@@ -39,6 +39,7 @@ function checkAnswer (userAnswer, x) {
         userScore ++;
         alert ("That is correct! You get 1 point! You have "+userScore+" points.");
         x++; // increment to move to next question
+        console.log(x);
         return x;
     }
     else { 
@@ -65,5 +66,5 @@ while (x < questionArray.length) {
     checkAnswer (userAnswer, x);
     //check if try limit exceeded
     tryExceeded (tryCount, userScore);
-    
+    console.log(x);
     }
