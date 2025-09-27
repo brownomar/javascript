@@ -20,7 +20,7 @@ function tryCounter () {
 function tryExceeded () {
     if (tryCount < 1){
         alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
-        document.write("Oof! Better luck next time!<br>");
+        document.write("<strong>Oof!</strong> Better luck next time!<br>");
         //end game
         x = questionArray.length;
         return x;
@@ -76,4 +76,4 @@ while (x < questionArray.length) {
     console.log(x);
     }
 //final score display
-document.write("Your final score is "+userScore+" out of "+questionArray.length+".<br><br> Refresh to go again!<br>");
+document.write("<strong>Your final score is "+userScore+" out of "+questionArray.length+".</strong><br><br> Refresh to go again!<br>");
