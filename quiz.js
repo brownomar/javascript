@@ -42,6 +42,9 @@ function checkAnswer (userAnswer) {
         tryCounter (tryCount);
         //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
+        //negate loop increment
+        x--;
+        return x;
     }
 }
 //display questions and answers
