@@ -25,8 +25,6 @@ function tryExceeded () {
         x = questionArray.length;
         return x;
     }
-    else {
-        return x;
     }
 }
 
@@ -66,6 +64,6 @@ while (x < questionArray.length) {
     //check question against answer
     checkAnswer (userAnswer, x);
     //check if try limit exceeded
-    tryExceeded (tryCount, userScore);
+    tryExceeded (tryCount, userScore, questionArray);
     console.log(x);
     }
