@@ -10,7 +10,7 @@ let pointsAwarded = [3,2,1];
 let y=0;
 
 //user answer attempt counter variable
-let tryCount = 4;
+let tryCount = 3;
 
 //counter for answer attempts
 function tryCounter () {
@@ -68,7 +68,8 @@ let x = 0;
 //main quiz loop
 while (x < questionArray.length) {
     // Q&A time
-    let userAnswer = prompt(questionArray[x]);
+    if (tryCount > 0){
+        let userAnswer = prompt(questionArray[x]);
     //check question against answer
     checkAnswer (userAnswer, x);
     //increment loop counter
