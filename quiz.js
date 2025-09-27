@@ -12,7 +12,7 @@ let tryCount = 4;
 //counter for answer attempts
 function tryCounter () {
     tryCount=tryCount - 1;
-    alert ("You have "+tryCount+" more tries.");
+    alert ("You now have "+tryCount+" more tries.");
     return tryCount;
 }
 
@@ -64,4 +64,5 @@ while (x < questionArray.length && tryCount > 0) {
     checkAnswer (userAnswer, x);
     //check if try limit exceeded
     tryExceeded (tryCount, userScore);
+    x++;
     }
