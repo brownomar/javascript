@@ -21,11 +21,12 @@ function tryExceeded () {
     if (tryCount < 1){
         alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
         document.write("Your points: "+userScore+" Game Over.<br><br> Refresh to go again!<br>");
-        let x=4;
+        //end game
+        x = questionArray.length;
         return x;
     }
     else {
-        return;
+        return x;
     }
 }
 
@@ -38,13 +39,13 @@ function checkAnswer (userAnswer, x) {
         userScore ++;
         alert ("That is correct! You get 1 point! You have "+userScore+" points.");
         x++; // increment to move to next question
+        return x;
     }
     else { 
         //decrement try counter
         tryCounter (tryCount);
         //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
-        
     }
 }
 //display questions and answers
@@ -64,5 +65,5 @@ while (x < questionArray.length && tryCount > 0) {
     checkAnswer (userAnswer, x);
     //check if try limit exceeded
     tryExceeded (tryCount, userScore);
-    x++;
+    
     }
