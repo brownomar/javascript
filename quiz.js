@@ -58,7 +58,7 @@ for (let i=0; i<questionArray.length; i++) {
 //loop counter variable
 let x = 0;
 //quiz loop
-while (x < questionArray.length && tryCount > 0) {
+while (x < questionArray.length) {
     // Q&A time
     let userAnswer = prompt(questionArray[x]);
     //check question against answer
