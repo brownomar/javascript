@@ -29,7 +29,7 @@ function tryExceeded () {
 
 
 //compare user answer to correct answer
-function checkAnswer () {
+function checkAnswer (userAnswer) {
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
         document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
