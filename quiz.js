@@ -51,8 +51,12 @@ function checkAnswer (userAnswer) {
 document.write("<h3>Here are the questions and answers:</h3><br>");
 for (let i=0; i<questionArray.length; i++) {
     document.write("Question "+(i+1)+": "+questionArray[i]+"<br>");
-    document.write("Answer: "+answerArray[i]+"<br><br>");
+    document.write("Answer: "+answerArray[i]+"<br>");
 }
+
+// user's activity log
+document.write("<h3>Your Quiz Results:</h3><br>");
+
 
 //loop counter variable
 let x = 0;
