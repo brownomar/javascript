@@ -5,6 +5,9 @@ var answerArray = ["Answer 1", "Answer 2", "Answer 3"];
 
 //score Variable
 let userScore = 0;
+//points awarded per correct answer variable
+let pointsAwarded = [3,2,1];
+let y=0;
 
 //user answer attempt counter variable
 let tryCount = 4;
@@ -13,7 +16,8 @@ let tryCount = 4;
 function tryCounter () {
     tryCount=tryCount - 1;
     alert ("You now have "+tryCount+" more tries.");
-    return tryCount;
+    y++;
+    return tryCount, y;
 }
 
 //game over if tries exceeded
@@ -34,12 +38,12 @@ function checkAnswer (userAnswer) {
         // if they got it correct 
         document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
         //give them a point
-        userScore ++;
+        userScore = userScore + pointsAwarded[y];
         alert ("That is correct! You get 1 point! You have "+userScore+" points.");
     }
     else { 
         //decrement try counter
-        tryCounter (tryCount);
+        tryCounter (tryCount, y);
         //communicate status of game
         document.write("On question "+(x+1)+", you answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
         //negate loop increment
