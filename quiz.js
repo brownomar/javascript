@@ -1,19 +1,18 @@
-let question1 = "What is the answer to question 1?";
-let question2 = "What is the answer to question 2?";
-let question3 = "What is the answer to question 3?";
-let answer1 = "Answer 1";
-let answer2 = "Answer 2";
-let answer3 = "Answer 3";
+//question Array
+var questionArray = ["What is the answer to question 1?", "What is the answer to question 2?", "What is the answer to question 3?"];
+//answer Array
+var answerArray = ["Answer 1", "Answer 2", "Answer 3"];
+
+//score Variable
 let userScore = 0;
-let x = 0;
+
+//user answer attempt counter variable
 let tryCount = 4;
-var questionArray = [question1, question2, question3];
-var answerArray = [answer1, answer2, answer3];
 
 //counter for answer attempts
 function tryCounter () {
     tryCount=tryCount - 1;
-    alert ("No. You have "+tryCount+" more tries.");
+    alert ("You have "+tryCount+" more tries.");
     return tryCount;
 }
 
@@ -21,7 +20,7 @@ function tryCounter () {
 function tryExceeded () {
     if (tryCount < 1){
         alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
-        document.write("Your points: "+userScore+" Game Over.");
+        document.write("Your points: "+userScore+" Game Over.<br><br> Let's go again!<br>");
         let x=4;
         return x;
     }
@@ -30,11 +29,8 @@ function tryExceeded () {
     }
 }
 
-//quiz loop
-while (x < questionArray.length) {
-    // Q&A time
-    let userAnswer = prompt(questionArray[x]);
-    //check question against answer
+//compare user answer to correct answer
+function checkAnswer (userAnswer, x) {
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
         document.write("You answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
@@ -49,7 +45,23 @@ while (x < questionArray.length) {
         //communicate status of game
         document.write("You answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
         
-        //check for game over
-        tryExceeded (tryCount, userScore);
     }
+}
+//display questions and answers
+document.write("<h3>Here are the questions and answers:</h3><br>");
+for (let i=0; i<questionArray.length; i++) {
+    document.write("Question "+(i+1)+": "+questionArray[i]+"<br>");
+    document.write("Answer: "+answerArray[i]+"<br><br>");
+}
+
+//loop counter variable
+let x = 0;
+//quiz loop
+while (x < questionArray.length && tryCount > 0) {
+    // Q&A time
+    let userAnswer = prompt(questionArray[x]);
+    //check question against answer
+    checkAnswer (userAnswer, x);
+    //check if try limit exceeded
+    tryExceeded (tryCount, userScore);
     }
