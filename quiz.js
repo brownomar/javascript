@@ -84,9 +84,13 @@ while (x < questionArray.length) {
     
     console.log(x);
     }
-    else{
-        //final score display
+    else if (trycount<=0)
+        {//final score display
     document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><br><br> <a href=\"quiz.html\">Refresh</a> to go again!<br>");
-        break;
+        }
+    else {
+         break;
     }
+    
 }
+ 
