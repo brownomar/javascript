@@ -39,7 +39,7 @@ function checkAnswer (userAnswer) {
         document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
         //give them a point
         userScore = userScore + pointsAwarded[y];
-        alert ("That is correct! You get 1 point! You have "+userScore+" points.");
+        alert ("That is correct! You get "+pointsAwarded[y]+" point\(s\)! You have "+userScore+" points.");
     }
     else { 
         //decrement try counter
@@ -82,4 +82,4 @@ while (x < questionArray.length) {
     }
 }
 //final score display
-document.write("<h2><strong>Your final score is "+userScore+" out of "+questionArray.length+".</strong></h2><br><br> Refresh to go again!<br>");
+document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><br><br> Refresh to go again!<br>");
