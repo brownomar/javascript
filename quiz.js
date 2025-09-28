@@ -86,5 +86,4 @@ while (x < questionArray.length) {
     //final score display
     document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><a href=\"quiz.html\">Refresh</a> to go again!<br>");
         
-//last but not least, load trivia questions and answers into the arrays
  
