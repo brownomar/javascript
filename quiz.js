@@ -23,11 +23,13 @@ function tryCounter () {
 //game over if tries exceeded
 function tryExceeded () {
     if (tryCount < 1){
-        alert("You have exceeded the number of failed attempts. Your score is "+userScore+". Game over.");
-        document.write("<strong>Oof!</strong> Better luck next time!<br>");
-        //end game
-        x = questionArray.length;
-        return x;
+        alert("You have exceeded the number of failed attempts for that one simple question. Your score is "+userScore+".");
+        //go to next question
+        x++;
+        //reset try counter
+        tryCount = 3;
+        y=0;     
+        return x, tryCount, y;
     }
     }
 
@@ -46,7 +48,7 @@ function checkAnswer (userAnswer) {
         tryCounter (tryCount, y);
         //communicate status of game
         document.write("On question "+(x+1)+", you answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
-        //negate loop increment
+        //negate loop increment to stay on same question
         x--;
         return x;
     }
