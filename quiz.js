@@ -14,7 +14,7 @@ let tryCount = 3;
 
 //counter for answer attempts
 function tryCounter () {
-    tryCount=tryCount - 1;
+    tryCount=pointsAwarded[y]-1;
     alert ("You now have "+tryCount+" more tries.");
     y++;
     return tryCount, y;
