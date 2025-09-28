@@ -86,4 +86,4 @@ while (x < questionArray.length) {
     }
 }
 //final score display
-document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><br><br> Refresh to go again!<br>");
+document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><br><br> <a href=\"quiz.html\">Refresh</a> to go again!<br>");
