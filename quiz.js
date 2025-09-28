@@ -42,6 +42,8 @@ function checkAnswer (userAnswer) {
         //give them a point
         userScore = userScore + pointsAwarded[y];
         alert ("That is correct! You get "+pointsAwarded[y]+" point\(s\)! You have "+userScore+" points.");
+        //reset point counter
+        y=0;
     }
     else { 
         //decrement try counter
