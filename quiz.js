@@ -34,27 +34,7 @@ function tryExceeded () {
     }
 
 
-//compare user answer to correct answer
-function checkAnswer (userAnswer) {
-    if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
-        // if they got it correct 
-        document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
-        //give them a point
-        userScore = userScore + pointsAwarded[y];
-        alert ("That is correct! You get "+pointsAwarded[y]+" point\(s\)! You have "+userScore+" points.");
-        //reset point counter
-        y=0;
-    }
-    else { 
-        //decrement try counter
-        tryCounter (tryCount, y);
-        //communicate status of game
-        document.write("On question "+(x+1)+", you answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
-        //negate loop increment to stay on same question
-        x--;
-        return x;
-    }
-}
+
 //display questions and answers
 document.write("<h3>Here are the questions and answers:</h3><br>");
 for (let i=0; i<questionArray.length; i++) {
@@ -73,9 +53,27 @@ let x = 0;
 while (x < questionArray.length) {
     // Q&A time
     if (tryCount > 0){
-        let userAnswer = prompt(questionArray[x]);
-    //check question against answer
-    checkAnswer (userAnswer, x);
+    let userAnswer = prompt(questionArray[x]);
+    
+    //compare user answer to correct answer
+    if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
+        // if they got it correct 
+        document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
+        //give them a point
+        userScore = userScore + pointsAwarded[y];
+        alert ("That is correct! You get "+pointsAwarded[y]+" point\(s\)! You have "+userScore+" points.");
+        //reset point counter
+        y=0;
+    }
+    else { 
+        //decrement try counter
+        tryCounter (tryCount, y);
+        //communicate status of game
+        document.write("On question "+(x+1)+", you answered <strong>\'" + userAnswer + "\'</strong> which was wrong.<br>");
+        //negate loop increment to stay on same question
+        x--;
+    }
+
     //increment loop counter
     x++;
     
