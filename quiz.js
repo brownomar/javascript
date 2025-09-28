@@ -1,7 +1,7 @@
 //question Array
-var questionArray = ["What is the answer to question 1?", "What is the answer to question 2?", "What is the answer to question 3?"];
+var questionArray = ["Which continent has land in all four hemispheres", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
 //answer Array
-var answerArray = ["Answer 1", "Answer 2", "Answer 3"];
+var answerArray = ["Africa", "I am, because you are", "Lake Victoria"];
 
 //score Variable
 let userScore = 0;
@@ -86,5 +86,5 @@ while (x < questionArray.length) {
     //final score display
     document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><a href=\"quiz.html\">Refresh</a> to go again!<br>");
         
-
+//last but not least, load trivia questions and answers into the arrays
  
