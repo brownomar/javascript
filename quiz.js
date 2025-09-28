@@ -1,5 +1,5 @@
 //question Array
-var questionArray = ["Which continent has land in all four hemispheres", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
+var questionArray = ["Which continent has land in all four hemispheres?", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
 //answer Array
 var answerArray = ["Africa", "I am, because you are", "Lake Victoria"];
 
