@@ -16,18 +16,15 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 //switch for morning afternooon or evening
 var timeOfDay;
 var hours = date.getHours();
-switch (hours) {
-    case (hours<12):
+switch (true) {
+    case (hours < 12):
         timeOfDay = "morning";
         break;
-    case (hours>=12):
+    case (hours < 18):
         timeOfDay = "afternoon";
         break;
-    case (hours>=18):
-        timeOfDay = "evening";
-        break; 
     default:
-        timeOfDay = "day";
+        timeOfDay = "evening";
 }
 
 document.write("Good "+timeOfDay+". Today is <strong>" + days[dayOfWeek] + ", " + months[month] + " " + day + ", " + year + "</strong>.<br><br>");
