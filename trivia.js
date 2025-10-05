@@ -30,7 +30,7 @@ switch (hours) {
         timeOfDay = "day";
 }
 
-document.write("Good "+timeOfDay+". Today is " + days[dayOfWeek] + ", " + months[month] + " " + day + ", " + year + ".<br>");
+document.write("Good "+timeOfDay+". Today is <strong>" + days[dayOfWeek] + ", " + months[month] + " " + day + ", " + year + "</strong>.<br><br>");
 
 //quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
