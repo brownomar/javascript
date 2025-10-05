@@ -19,12 +19,11 @@ function getCurrentTime() {
     var minute = now.getMinutes();
 //switch for morning afternooon or evening
     var timeOfDay;
-    var hours = date.getHours();
     switch (true) {
-        case (hours < 12):
+        case (hour < 12):
             timeOfDay = "morning";
             break;
-        case (hours < 18):
+        case (hour < 18):
             timeOfDay = "afternoon";
             break;
         default:
@@ -47,15 +46,21 @@ function getCurrentTime() {
     return currentTime, day, timeOfDay;
 
 }
-getCurrentTime();
-getCurrentDate();
-capitalizeUserName = function(userName) {
+//capitalize first letter of user name
+function capitalizeUserName () {
     return userName.charAt(0).toUpperCase() + userName.slice(1);
 }
+getCurrentTime();
+getCurrentDate();
+
 
 //get user name
 var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
+userName = capitalizeUserName(userName);
+//get user email
 var userEmail = prompt ("<strong>Good "+timeOfDay+", "+userName+"</strong>!!<br> What is your email address?");
+
+
 
 //quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
