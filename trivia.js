@@ -1,33 +1,61 @@
-function printToday() {
-    var today = new Date();
-    document.write("Today's date is " + today.toDateString() + "<br>");
-}
 
 //creating a date object
-var date = new Date();
-var newDate = Date(month, day, year);
-var year = date.getFullYear();
-var month = date.getMonth();
-var day = date.getDate();
-var dayOfWeek = date.getDay();
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-//switch for morning afternooon or evening
-var timeOfDay;
-var hours = date.getHours();
-switch (true) {
-    case (hours < 12):
-        timeOfDay = "morning";
-        break;
-    case (hours < 18):
-        timeOfDay = "afternoon";
-        break;
-    default:
-        timeOfDay = "evening";
+function getCurrentDate(){
+//array for month and day names
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var year = date.getFullYear();
+    var monthName = months[date.getMonth()];
+    var day = date.getDate();
+    var dayOfWeek = days[date.getDay()];
+    return dayOfWeek, monthName, day, year;
 }
 
-document.write("Good "+timeOfDay+". Today is <strong>" + days[dayOfWeek] + ", " + months[month] + " " + day + ", " + year + "</strong>.<br><br>");
+//function to get current time info
+function getCurrentTime() {
+    var now = new Date();
+    var day = now.getDay();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+//switch for morning afternooon or evening
+    var timeOfDay;
+    var hours = date.getHours();
+    switch (true) {
+        case (hours < 12):
+            timeOfDay = "morning";
+            break;
+        case (hours < 18):
+            timeOfDay = "afternoon";
+            break;
+        default:
+            timeOfDay = "evening";
+            break;
+        }
+//calculate morning or evening suffix
+    var suffix = "AM";
+    if (hour >= 12) {
+        suffix = "PM";
+        if (hour > 12) {
+            hour = hour - 12;
+        }
+    }
+    if (minute < 10) {
+        minute = "0" + minute;
+    }
+    var currentTime = hour + ":" + minute + " " + suffix;
+    document.write("The current time is " + currentTime + ".<br><br>");
+    return currentTime, day, timeOfDay;
+
+}
+getCurrentTime();
+getCurrentDate();
+capitalizeUserName = function(userName) {
+    return userName.charAt(0).toUpperCase() + userName.slice(1);
+}
+
+//get user name
+var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
+var userEmail = prompt ("<strong>Good "+timeOfDay+", "+userName+"</strong>!!<br> What is your email address?");
 
 //quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
