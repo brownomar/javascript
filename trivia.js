@@ -2,6 +2,7 @@
 //creating a date object
 function getCurrentDate(){
 //array for month and day names
+    var date = new Date();
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var year = date.getFullYear();
