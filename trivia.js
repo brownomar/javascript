@@ -32,10 +32,19 @@ switch (hours) {
 
 document.write("Good "+timeOfDay+". Today is " + days[dayOfWeek] + ", " + months[month] + " " + day + ", " + year + ".<br>");
 
-//question Array
+//quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
 let dailyQuote = fiveQuotes[Math.floor(Math.random()*4)]
 
+
+
+
+//old quiz code below
+
+//question Array
+var questionArray = ["Which continent has land in all four hemispheres?", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
+//answer Array
+var answerArray = ["Africa", "I am, because you are", "Lake Victoria"];
 
 //score Variable
 let userScore = 0;
@@ -52,7 +61,7 @@ function tryCounter () {
     alert ("You now have "+tryCount+" more tries.");
     y++;
     return tryCount, y;
-    }
+}
 
 //game over if tries exceeded
 function tryExceeded () {
@@ -66,8 +75,6 @@ function tryExceeded () {
         return x, tryCount, y;
     }
     }
-
-
 
 //display questions and answers
 document.write("<h3>Here are the questions and answers:</h3>");
