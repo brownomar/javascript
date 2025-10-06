@@ -106,8 +106,8 @@ validateEmail(userEmail);
 //display username and domain extracted from email address
 var extractedName = extractUserName(userEmail);
 var extractedDomain = extractDomainName(userEmail);
-document.write("Username: <strong>" + extractedName + "</strong>. <br>");
-document.write("Domain: <strong>" + extractedDomain + "</strong>.<br><br>");
+document.write("Username: <strong>" + extractedName.toUpperCase() + "</strong><br>");
+document.write("Domain: <strong>" + extractedDomain + "</strong><br><br>");
 
 
 //quote array and selector
