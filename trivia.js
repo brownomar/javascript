@@ -70,6 +70,13 @@ function validateEmail(){
 return userEmail;
 }
 
+//extract user name from email address
+function extractUserName(){
+    var sliceHere = userEmail.indexOf("@");
+    var extractedName = userEmail.slice(0, sliceHere);
+    var extractedDomain = userEmail.slice(sliceHere + 1);
+    return extractedName.toUpperCase(), extractedDomain;
+}
 
 //MAIN PROGRAM
 
@@ -85,7 +92,13 @@ var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
 userName = capitalizeUserName(userName);
 //get user email
 var userEmail = prompt ("Good " + timeOfDay + ", "+userName+" What is your email address?");
+document.write("Good " + timeOfDay + ", "+userName+"!<br><br>");
 validateEmail(userEmail);
+//display username and domain extracted from email address
+var extractedName = extractUserName(userEmail);
+var extractedDomain = extractUserName(userEmail);
+document.write("Username: <strong>" + extractedName + "</strong>. <br>");
+document.write("Domain: <strong>" + extractedDomain + "</strong>.<br><br>");
 
 
 //quote array and selector
@@ -94,7 +107,7 @@ let dailyQuote = fiveQuotes[Math.floor(Math.random()*4)];
 document.write("Here is your quote for the day:<br><strong><em>\"" + dailyQuote + "\"</em></strong><br><br>");
 
 
-//old quiz code below
+//copied quiz code below
 
 //question Array
 var questionArray = ["Which continent has land in all four hemispheres?", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
@@ -151,7 +164,7 @@ while (x < questionArray.length) {
     if (tryCount > 0){
     let userAnswer = prompt(questionArray[x]);
     
-    //compare user answer to correct answer
+    //convert answers to lowercase and compare user answer to correct answer
     if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
         // if they got it correct 
         document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
@@ -181,5 +194,8 @@ while (x < questionArray.length) {
     }
     //final score display
     document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><a href=\"quiz.html\">Refresh</a> to go again!<br>");
-        
+    //final score percentage format two decimal places
+    let scorePercent = (userScore/(pointsAwarded.length*answerArray.length))*100;
+    document.write("That's "+scorePercent.toFixed(2)+"% correct!<br>");
+
  
