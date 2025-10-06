@@ -121,7 +121,7 @@ document.write("Here is your quote for the day:<br><strong><em>\"" + dailyQuote 
 //question Array
 var questionArray = ["Which continent has land in all four hemispheres?", "What does the South African concept of \"Ubuntu\" mean?", "What is the largest lake in Africa?"];
 //answer Array
-var answerArray = ["Africa", "I am, because you are", "Lake Victoria"];
+var answerArray = ["africa", "i am, because you are", "lake victoria"];
 
 //score Variable
 let userScore = 0;
@@ -174,7 +174,7 @@ while (x < questionArray.length) {
     let userAnswer = prompt(questionArray[x]);
     
     //convert answers to lowercase and compare user answer to correct answer
-    if (userAnswer.toLowerCase() === answerArray[x].toLowerCase()) {
+    if (userAnswer.toLowerCase() === answerArray[x]) {
         // if they got it correct 
         document.write("On question "+(x+1)+", you answered <strong>\'"+ userAnswer+"\'</strong>, which was correct!<br>");
         //give them a point
