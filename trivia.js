@@ -48,11 +48,15 @@ function getCurrentTime() {
             hour = hour - 12;
         }
     }
+    if (hour === 0) {
+        hour = 12;
+    }
     if (minute < 10) {
         minute = "0" + minute;
     }
     var currentTime = hour + ":" + minute + " " + suffix;
     return currentTime;
+    
 
 }
 
@@ -74,10 +78,15 @@ return userEmail;
 function extractUserName(){
     var sliceHere = userEmail.indexOf("@");
     var extractedName = userEmail.slice(0, sliceHere);
-    var extractedDomain = userEmail.slice(sliceHere + 1);
-    return extractedName, extractedDomain;
+    return extractedName;
 }
 
+//extract domain from email address
+function extractDomainName(){
+    var sliceHere = userEmail.indexOf("@");
+    var extractedDomain = userEmail.slice(sliceHere + 1);
+    return extractedDomain;
+}
 //MAIN PROGRAM
 
 //get time of day, current date and time
@@ -95,7 +104,8 @@ var userEmail = prompt ("Good " + timeOfDay + ", "+userName+" What is your email
 document.write("Good " + timeOfDay + ", "+userName+"!<br><br>");
 validateEmail(userEmail);
 //display username and domain extracted from email address
-var extractedName, extractedDomain = extractUserName(userEmail);
+var extractedName = extractUserName(userEmail);
+var extractedDomain = extractDomainName(userEmail);
 document.write("Username: <strong>" + extractedName + "</strong>. <br>");
 document.write("Domain: <strong>" + extractedDomain + "</strong>.<br><br>");
 
