@@ -75,7 +75,7 @@ function extractUserName(){
     var sliceHere = userEmail.indexOf("@");
     var extractedName = userEmail.slice(0, sliceHere);
     var extractedDomain = userEmail.slice(sliceHere + 1);
-    return extractedName.toUpperCase(), extractedDomain;
+    return extractedName, extractedDomain;
 }
 
 //MAIN PROGRAM
@@ -187,8 +187,6 @@ while (x < questionArray.length) {
     
     //check if try limit exceeded
     tryExceeded (tryCount, userScore, questionArray);
-    
-    console.log(x);
     }
     }
     //final score display
