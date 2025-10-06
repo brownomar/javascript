@@ -95,8 +95,7 @@ var userEmail = prompt ("Good " + timeOfDay + ", "+userName+" What is your email
 document.write("Good " + timeOfDay + ", "+userName+"!<br><br>");
 validateEmail(userEmail);
 //display username and domain extracted from email address
-var extractedName = extractUserName(userEmail);
-var extractedDomain = extractUserName(userEmail);
+var extractedName, extractedDomain = extractUserName(userEmail);
 document.write("Username: <strong>" + extractedName + "</strong>. <br>");
 document.write("Domain: <strong>" + extractedDomain + "</strong>.<br><br>");
 
@@ -193,9 +192,10 @@ while (x < questionArray.length) {
     }
     }
     //final score display
-    document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2><a href=\"quiz.html\">Refresh</a> to go again!<br>");
+    document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2>")
+
     //final score percentage format two decimal places
     let scorePercent = (userScore/(pointsAwarded.length*answerArray.length))*100;
-    document.write("That's "+scorePercent.toFixed(2)+"% correct!<br>");
+    document.write("That's <strong>"+scorePercent.toFixed(2)+"%</strong> correct!<br>");
 
- 
+    document.write("<a href=\"quiz.html\">Refresh</a> to go again!<br>");
