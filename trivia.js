@@ -1,5 +1,5 @@
 
-//creating a date object
+//FUNCTIONS
 function getCurrentDate(){
 //array for month and day names
     var date = new Date();
@@ -12,6 +12,7 @@ function getCurrentDate(){
     var currentDate = dayOfWeek + ", " + monthName + " " + day + ", " + year;
     return currentDate;
 }
+
 //function to get time of day
 function getTimeOfDay() {
     var now = new Date();
@@ -32,7 +33,6 @@ function getTimeOfDay() {
         }
     return timeOfDay;
 }
-
 
 //function to get current time info
 function getCurrentTime() {
@@ -60,6 +60,19 @@ function getCurrentTime() {
 function capitalizeUserName () {
     return userName.charAt(0).toUpperCase() + userName.slice(1);
 }
+
+//validate email address
+function validateEmail(){
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    while (!emailPattern.test(userEmail)) {
+    userEmail = prompt("That doesn't seem to be a valid email address. Please enter a valid email address.");
+    }
+return userEmail;
+}
+
+
+//MAIN PROGRAM
+
 //get time of day, current date and time
 var timeOfDay = getTimeOfDay();
 var currentDate = getCurrentDate();
@@ -71,8 +84,8 @@ document.write("It is " + currentTime + " on " + currentDate + ".<br>");
 var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
 userName = capitalizeUserName(userName);
 //get user email
-var userEmail = prompt ("<strong>Good " + timeOfDay + ", "+userName+"</strong>!!<br> What is your email address?");
-
+var userEmail = prompt ("Good " + timeOfDay + ", "+userName+" What is your email address?");
+validateEmail(userEmail);
 
 
 //quote array and selector
