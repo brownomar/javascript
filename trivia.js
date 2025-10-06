@@ -9,7 +9,8 @@ function getCurrentDate(){
     var monthName = months[date.getMonth()];
     var day = date.getDate();
     var dayOfWeek = days[date.getDay()];
-    return dayOfWeek, monthName, day, year;
+    var currentDate = dayOfWeek+", "+monthName+" "+day+", "+year;
+    return currentDate;
 }
 
 //function to get current time info
@@ -18,6 +19,7 @@ function getCurrentTime() {
     var day = now.getDay();
     var hour = now.getHours();
     var minute = now.getMinutes();
+    
 //switch for morning afternooon or evening
     var timeOfDay;
     switch (true) {
@@ -43,25 +45,24 @@ function getCurrentTime() {
         minute = "0" + minute;
     }
     var currentTime = hour + ":" + minute + " " + suffix;
-    document.write("The current time is " + currentTime + ".<br><br>");
-    return currentTime, day, timeOfDay;
+    return currentTime;
 
 }
 //capitalize first letter of user name
 function capitalizeUserName () {
     return userName.charAt(0).toUpperCase() + userName.slice(1);
 }
-getCurrentTime();
-getCurrentDate();
 
 
+//display current date
+document.write("It is "+ getCurrentTime() + " on " + getCurrentDate()+".<br>");
 //get user name
 var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
 userName = capitalizeUserName(userName);
 //get user email
 var userEmail = prompt ("<strong>Good "+timeOfDay+", "+userName+"</strong>!!<br> What is your email address?");
 
-
+getCurrentTime();
 
 //quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
