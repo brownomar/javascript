@@ -206,4 +206,4 @@ while (x < questionArray.length) {
     let scorePercent = (userScore/(pointsAwarded.length*answerArray.length))*100;
     document.write("That's <strong>"+scorePercent.toFixed(2)+"%</strong> correct!<br>");
 
-    document.write("<a href=\"quiz.html\">Refresh</a> to go again!<br>");
+    document.write("<a href=\"trivia.html\">Refresh</a> to go again!<br>");
