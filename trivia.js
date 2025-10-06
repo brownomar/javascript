@@ -9,16 +9,13 @@ function getCurrentDate(){
     var monthName = months[date.getMonth()];
     var day = date.getDate();
     var dayOfWeek = days[date.getDay()];
-    var currentDate = dayOfWeek+", "+monthName+" "+day+", "+year;
+    var currentDate = dayOfWeek + ", " + monthName + " " + day + ", " + year;
     return currentDate;
 }
-
-//function to get current time info
-function getCurrentTime() {
+//function to get time of day
+function getTimeOfDay() {
     var now = new Date();
-    var day = now.getDay();
     var hour = now.getHours();
-    var minute = now.getMinutes();
     
 //switch for morning afternooon or evening
     var timeOfDay;
@@ -33,6 +30,16 @@ function getCurrentTime() {
             timeOfDay = "evening";
             break;
         }
+    return timeOfDay;
+}
+
+
+//function to get current time info
+function getCurrentTime() {
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+ 
 //calculate morning or evening suffix
     var suffix = "AM";
     if (hour >= 12) {
@@ -48,26 +55,30 @@ function getCurrentTime() {
     return currentTime;
 
 }
+
 //capitalize first letter of user name
 function capitalizeUserName () {
     return userName.charAt(0).toUpperCase() + userName.slice(1);
 }
-
+//get time of day, current date and time
+var timeOfDay = getTimeOfDay();
+var currentDate = getCurrentDate();
+var currentTime = getCurrentTime();
 
 //display current date
-document.write("It is "+ getCurrentTime() + " on " + getCurrentDate()+".<br>");
+document.write("It is " + currentTime + " on " + currentDate + ".<br>");
 //get user name
 var userName = prompt("Welcome to the Trivia Quiz! What is your name?");
 userName = capitalizeUserName(userName);
 //get user email
-var userEmail = prompt ("<strong>Good "+timeOfDay+", "+userName+"</strong>!!<br> What is your email address?");
+var userEmail = prompt ("<strong>Good " + timeOfDay + ", "+userName+"</strong>!!<br> What is your email address?");
 
-getCurrentTime();
+
 
 //quote array and selector
 let fiveQuotes = ["Like a ten-speed bike, most of us have gears we do not use.", "When spiderwebs unite, they can tie up a lion.","Reading is to the mind what exercise is to the body.", "You can't win unless you know how to lose.", "You cannot shake hands with a clenched fist."];
 let dailyQuote = fiveQuotes[Math.floor(Math.random()*4)];
-document.write("Here is your quote for the day:<br><strong><em>\""+dailyQuote+"\"</em></strong><br><br>");
+document.write("Here is your quote for the day:<br><strong><em>\"" + dailyQuote + "\"</em></strong><br><br>");
 
 
 //old quiz code below
