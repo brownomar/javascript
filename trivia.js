@@ -200,10 +200,9 @@ while (x < questionArray.length) {
     }
     }
     //final score display
-    document.write("<h2><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h2>")
+    document.write("<h3><strong>Your final score is "+userScore+" out of "+(pointsAwarded.length*answerArray.length)+" points.</strong></h3>")
 
     //final score percentage format two decimal places
     let scorePercent = (userScore/(pointsAwarded.length*answerArray.length))*100;
-    document.write("That's <strong>"+scorePercent.toFixed(2)+"%</strong> correct!<br>");
-
+    document.write("<h3>That's <strong>"+scorePercent.toFixed(2)+"%</strong> correct!</h3><br>");
     document.write("<a href=\"trivia.html\">Refresh</a> to go again!<br>");
