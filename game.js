@@ -32,23 +32,6 @@ function displayQuestion() {
    }
 }
 
-//function to play the game
-function playGame() {
-   //disable play button once game starts and enable reset button
-   document.getElementById("play").disabled = true;
-   document.getElementById("reset").disabled = false;
-   displayQuestion();
-   //add event listeners to answer choices
-   var answersList = document.getElementById("answers");
-   for (var i = 2; i < questions[currentQuestion].length; i++) {
-      var listItem = document.createElement("li");
-      listItem.innerHTML = questions[currentQuestion][i];
-      listItem.addEventListener("click", checkAnswer);
-      answersList.appendChild(listItem);
-   }
-   //clear prompt
-   document.getElementById("prompt").innerHTML = "";
-}
 
 //function to check the answer
 function checkAnswer(event, correctAnswerIndex) {
@@ -107,3 +90,21 @@ function resetGame() {
    document.getElementById("reset").disabled = true;
 }
 //end of game.js
+
+//function to play the game
+function playGame() {
+   //disable play button once game starts and enable reset button
+   document.getElementById("play").disabled = true;
+   document.getElementById("reset").disabled = false;
+   displayQuestion();
+   //add event listeners to answer choices
+   var answersList = document.getElementById("answers");
+   for (var i = 2; i < questions[currentQuestion].length; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerHTML = questions[currentQuestion][i];
+      listItem.addEventListener("click", checkAnswer);
+      answersList.appendChild(listItem);
+   }
+   //clear prompt
+   document.getElementById("prompt").innerHTML = "";
+}
