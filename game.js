@@ -1,5 +1,7 @@
 
-
+//play button starts the game
+document.getElementById("play").addEventListener("click", playGame);
+document.getElementById("reset").addEventListener("click", resetGame);
 
 // Question Multi-dimensional array
 var questions = [
@@ -27,58 +29,70 @@ function displayQuestion() {
       //display possible answers
       var answersList = document.getElementById("answers");
       answersList.innerHTML = "";
+   }
+}
 
-/* loop through possible answers, starting at index 2
-   create a list item for each possible answer
-   add event listener to each list item   */
+//function to play the game
 function playGame() {
+   //disable play button once game starts and enable reset button
+   document.getElementById("play").disabled = true;
+   document.getElementById("reset").disabled = false;
+   displayQuestion();
+   //add event listeners to answer choices
+   var answersList = document.getElementById("answers");
+   for (var i = 2; i < questions[currentQuestion].length; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerHTML = questions[currentQuestion][i];
+      listItem.addEventListener("click", checkAnswer);
+      answersList.appendChild(listItem);
+   }
+   //clear prompt
+   document.getElementById("prompt").innerHTML = "";
+}
+
+//function to check the answer
+function checkAnswer(event) {
+   var selectedAnswer = event.target.innerHTML;
+   var correctAnswer = questions[currentQuestion][correctAnswerIndex];
+   if (selectedAnswer === correctAnswer) {
+      score++;
+      document.getElementById("prompt").innerHTML = "Correct!";
+   }
+   else {
+      document.getElementById("prompt").innerHTML = "Sorry, the correct answer is: " + correctAnswer;
+   }
+   currentQuestion++;
+   //check if game is over
+   if (currentQuestion >= totalQuestions) {
+      gameOver = true;
+      endGame();
+   }
+   else {
+      displayQuestion();
+      //add event listeners to answer choices
+      var answersList = document.getElementById("answers");
+      answersList.innerHTML = "";
+      for (var i = 2; i < questions[currentQuestion].length; i++) {
+         var listItem = document.createElement("li");
+         listItem.innerHTML = questions[currentQuestion][i];
+         listItem.addEventListener("click", checkAnswer);
+         answersList.appendChild(listItem);
+      }
+      //clear prompt
+      document.getElementById("prompt").innerHTML = "";
+   }
+}
+
+//function to end the game
+function endGame() {
+   document.getElementById("question").innerHTML = "Game Over! Your score is " + score + " out of " + totalQuestions + ".";
+   document.getElementById("answers").innerHTML = "";
+   document.getElementById("prompt").innerHTML = "Click the Reset Game button to play again.";
    //disable play button and enable reset button
    document.getElementById("play").disabled = true;
    document.getElementById("reset").disabled = false;
-   //display first question
-   displayQuestion();
-   //clear prompt
-   document.getElementById("prompt").innerHTML = "";
-   gameOver = false;
-   currentQuestion = 0;
-   score = 0;
 }
-   for (var i = 2; i < questions[currentQuestion].length; i++) {
-         var li = document.createElement("li");
-         li.innerHTML = questions[currentQuestion][i];
-         li.addEventListener("click", checkAnswer);
-         answersList.appendChild(li);
-      }
-   } else {
-      //no more questions, end game
-      endGame();
-      gameOver = true;
-      document.getElementById("play").disabled = false;
-      document.getElementById("reset").disabled = true;
-      document.getElementById("question").innerHTML = "Game Over! Your final score is " + score + " out of " + totalQuestions + ".";
-      document.getElementById("answers").innerHTML = "";
-      document.getElementById("prompt").innerHTML = "Click the Play Game button to play again.";
-   }
-}
-//function to check if selected answer is correct
-function checkAnswer(event) {
-   if (!gameOver) {
-      var selectedAnswer = event.target.innerHTML;
-      var correctAnswer = questions[currentQuestion][correctAnswerIndex];
-      if (selectedAnswer === correctAnswer) {
-         score++;
-         document.getElementById("prompt").innerHTML = "Correct!";
-      } else {
-         document.getElementById("prompt").innerHTML = "Sorry, the correct answer was: " + correctAnswer;
-      }
-      currentQuestion++;
-      displayQuestion();
-   }
-}
-//function to end the game
-function endGame() {
-   gameOver = true;
-}
+
 //function to reset the game
 function resetGame() {
    currentQuestion = 0;
@@ -87,10 +101,9 @@ function resetGame() {
    document.getElementById("question").innerHTML = "Click the Play Game button to play our game.";
    document.getElementById("answers").innerHTML = "";
    document.getElementById("prompt").innerHTML = "";
+
+   //enable play button and disable reset button
    document.getElementById("play").disabled = false;
    document.getElementById("reset").disabled = true;
 }
-
-//play button starts the game
-document.getElementById("play").addEventListener("click", playGame());
-document.getElementById("reset").addEventListener("click", resetGame());
+//end of game.js
