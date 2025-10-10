@@ -5,75 +5,34 @@ document.getElementById("reset").addEventListener("click", resetGame);
 
 // Question Multi-dimensional array
 var questions = [
-   ["What is the capital of India", "A. Bollywood", "B. Ghandi", "C. New Delhi"],
-   ["How many colors are in a rainbow?", "A. 4", "B. 20", "C. 7"],
-   ["What is the hardest natural substance on Earth?", "A. Water", "B. Plastic", "C. Diamond"]
+   ["What is the capital of India", 4, "A. Bollywood", "B. Ghandi", "C. New Delhi"],
+   ["How many colors are in a rainbow?", 4, "A. 4", "B. 20", "C. 7"],
+   ["What is the hardest natural substance on Earth?", 4, "A. Water", "B. Plastic", "C. Diamond"]
 ];
-
+//initialize variables
 var currentQuestion = 0;
 var score = 0;
 var totalQuestions = questions.length;
 var gameOver = false;
+//correct answer is the second element in each question array
+correctAnswerIndex = 1;
 
-function playGame() {
-   if (gameOver) {
-      displayScore();
-      resetGame();
-   }
-   displayQuestion();
-   gameOver = false;
-   document.getElementById("prompt").innerHTML = "";
-   document.getElementById("play").disabled = true;
-   document.getElementById("reset").disabled = false;
-}
-function resetGame() {
-   currentQuestion = 0;
-   score = 0;
-   gameOver = false;
-   document.getElementById("question").innerHTML = "Click the Play Game button to play our game.";
-   document.getElementById("answers").innerHTML = "";
-   document.getElementById("prompt").innerHTML = "";
-   document.getElementById("play").disabled = false;
-   document.getElementById("reset").disabled = true;
-}  
-// Display the current question and answers
+//make sure reset button is disabled when page first loads
+document.getElementById("reset").disabled = true;
+
+//function to display question and possible answers
 function displayQuestion() {
+   //check if there are more questions
    if (currentQuestion < totalQuestions) {
-      var q = questions[currentQuestion];
-      document.getElementById("question").innerHTML = q[0];
+      //display question
+      document.getElementById("question").innerHTML = questions[currentQuestion][0];
+      //display possible answers
       var answersList = document.getElementById("answers");
       answersList.innerHTML = "";
-      for (var i = 1; i < q.length; i++) {
-         var li = document.createElement("li");
-         li.innerHTML = q[i];
-         li.addEventListener("click", checkAnswer);
-         answersList.appendChild(li);
-      }
-   } else {
-      gameOver = true;
-      displayScore();
-      document.getElementById("play").innerHTML = "Play Again";
-      document.getElementById("play").disabled = false;
-      document.getElementById("reset").disabled = true;
-   }
-}
-// Check the selected answer
-function checkAnswer(event) {
-   var selectedAnswer = event.target.innerHTML;
-   var correctAnswers = ["C. New Delhi", "C. 7", "C. Diamond"];
-   if (selectedAnswer === correctAnswers[currentQuestion]) {
-      score++;
-      document.getElementById("prompt").innerHTML = "Correct!";
-   } else {
-      document.getElementById("prompt").innerHTML = "Wrong! The correct answer was: " + correctAnswers[currentQuestion];
-   }
-   currentQuestion++;
+
+function playGame() {
+   //disable play button and enable reset button
+   document.getElementById("play").disabled = true;
+   document.getElementById("reset").disabled = false;
+   //display first question
    displayQuestion();
-}
-// Display the final score
-function displayScore() {
-   document.getElementById("question").innerHTML = "Game Over! Your score is " + score + " out of " + totalQuestions + ".";
-   document.getElementById("answers").innerHTML = "";
-   document.getElementById("prompt").innerHTML = "Click 'Play Again' to try again.";
-}
-// End of game.js
