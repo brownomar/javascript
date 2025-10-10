@@ -1,7 +1,5 @@
 
-//play button starts the game
-document.getElementById("play").addEventListener("click", playGame);
-document.getElementById("reset").addEventListener("click", resetGame);
+
 
 // Question Multi-dimensional array
 var questions = [
@@ -93,3 +91,6 @@ function resetGame() {
    document.getElementById("reset").disabled = true;
 }
 
+//play button starts the game
+document.getElementById("play").addEventListener("click", playGame());
+document.getElementById("reset").addEventListener("click", resetGame());
