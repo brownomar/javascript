@@ -36,6 +36,7 @@ function displayQuestion() {
 //function to check the answer
 function checkAnswer(event) {
    var selectedAnswer = event.target.innerHTML;
+   var correctAnswerIndex = questions[currentQuestion][1];
    var correctAnswer = questions[currentQuestion][correctAnswerIndex];
    if (selectedAnswer === correctAnswer) {
       score++;
