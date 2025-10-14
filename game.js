@@ -36,14 +36,21 @@ function checkAnswer(event) {
    var selectedAnswer = event.target.innerHTML.trim();
    var correctAnswerIndex = questions[currentQuestion][1];
    var correctAnswer = questions[currentQuestion][correctAnswerIndex].trim();
-   if (selectedAnswer === correctAnswer) {
+   console.log("Selected Answer: " + selectedAnswer);
+   console.log("Correct Answer: " + correctAnswer);
+   //check if answer is correct
+   if (selectedAnswer = correctAnswer) {
       score++;
       document.getElementById("prompt").innerHTML = "Correct!";
+      console.log("Score: " + score);
+      currentQuestion++;
    }
    else {
       document.getElementById("prompt").innerHTML = "Sorry, the correct answer is: " + correctAnswer;
+      console.log("Score: " + score);
+      currentQuestion++;
    }
-   currentQuestion++;
+   
    //check if game is over
    if (currentQuestion >= totalQuestions) {
       gameOver = true;
@@ -60,8 +67,6 @@ function checkAnswer(event) {
          listItem.addEventListener("click", checkAnswer);
          answersList.appendChild(listItem);
       }
-      //clear prompt
-      document.getElementById("prompt").innerHTML = "";
    }
 }
 
