@@ -34,7 +34,7 @@ function displayQuestion() {
 
 
 //function to check the answer
-function checkAnswer(event, correctAnswerIndex) {
+function checkAnswer(event) {
    var selectedAnswer = event.target.innerHTML;
    var correctAnswer = questions[currentQuestion][correctAnswerIndex];
    if (selectedAnswer === correctAnswer) {
