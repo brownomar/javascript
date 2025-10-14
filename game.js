@@ -5,7 +5,7 @@ document.getElementById("reset").addEventListener("click", resetGame);
 
 // Question Multi-dimensional array
 var questions = [
-   ["What is the capital of India", 4, "A. Bollywood", "B. Ghandi", "C. New Delhi"],
+   ["What is the capital of India?", 4, "A. Bollywood", "B. Ghandi", "C. New Delhi"],
    ["How many colors are in a rainbow?", 4, "A. 4", "B. 20", "C. 7"],
    ["What is the hardest natural substance on Earth?", 4, "A. Water", "B. Plastic", "C. Diamond"]
 ];
@@ -102,6 +102,7 @@ function resetGame() {
    document.getElementById("reset").disabled = true;
 }
 //end of game.js
+
 
 //function to play the game
 function playGame() {
