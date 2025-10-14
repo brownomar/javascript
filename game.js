@@ -39,7 +39,7 @@ function checkAnswer(event) {
    console.log("Selected Answer: " + selectedAnswer);
    console.log("Correct Answer: " + correctAnswer);
    //check if answer is correct
-   if (selectedAnswer = correctAnswer) {
+   if (selectedAnswer === correctAnswer) {
       score++;
       document.getElementById("prompt").innerHTML = "Correct!";
       console.log("Score: " + score);
