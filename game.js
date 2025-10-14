@@ -38,31 +38,35 @@ function checkAnswer(event) {
    var correctAnswer = questions[currentQuestion][correctAnswerIndex].trim();
    console.log("Selected Answer: " + selectedAnswer);
    console.log("Correct Answer: " + correctAnswer);
+   
+   //result of choice
+   var feedbackMessage = "";
+
    //check if answer is correct
    if (selectedAnswer === correctAnswer) {
       score++;
-      document.getElementById("prompt").innerHTML = "Correct!";
+      feedbackMessage = "Correct!";
+      document.getElementById("prompt").innerHTML = feedbackMessage;
       console.log("Score: " + score);
-      currentQuestion++;
    }
    else {
+      feedbackMessage = "Incorrect. ";
       document.getElementById("prompt").innerHTML = "Sorry, the correct answer was: " + correctAnswer;
       console.log("Score: " + score);
-      currentQuestion++;
-      //add a small delay before showing the next question or ending the game
-      setTimeout(function() {
-         document.getElementById("prompt").innerHTML = "";
-      }, 2000);
    }
-   
+   //move to next question
+   currentQuestion++;
+
    //check if game is over
    if (currentQuestion >= totalQuestions) {
       gameOver = true;
-      endGame();
+      endGame(feedbackMessage);
    }
    else {
+      //display results of last question
+      document.getElementById("prompt").innerHTML = feedbackMessage;
       displayQuestion();
-      //add event listeners to answer choices
+      //list answer choices and add event listeners to answer choices
       var answersList = document.getElementById("answers");
       answersList.innerHTML = "";
       for (var i = 2; i < questions[currentQuestion].length; i++) {
@@ -75,10 +79,10 @@ function checkAnswer(event) {
 }
 
 //function to end the game
-function endGame() {
+function endGame(lastFeedback) {
    document.getElementById("question").innerHTML = "Game Over! Your score is " + score + " out of " + totalQuestions + ".";
    document.getElementById("answers").innerHTML = "";
-   document.getElementById("prompt").innerHTML = "Click the Reset Game button to play again.";
+   document.getElementById("prompt").innerHTML = lastFeedback + "<br><br>Click the Reset Game button to play again.";
    //disable play button and enable reset button
    document.getElementById("play").disabled = true;
    document.getElementById("reset").disabled = false;
@@ -105,7 +109,7 @@ function playGame() {
    document.getElementById("play").disabled = true;
    document.getElementById("reset").disabled = false;
    displayQuestion();
-   //add event listeners to answer choices
+   //lists answers and adds event listeners to answer choices
    var answersList = document.getElementById("answers");
    for (var i = 2; i < questions[currentQuestion].length; i++) {
       var listItem = document.createElement("li");
