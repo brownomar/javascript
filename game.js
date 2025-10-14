@@ -46,9 +46,13 @@ function checkAnswer(event) {
       currentQuestion++;
    }
    else {
-      document.getElementById("prompt").innerHTML = "Sorry, the correct answer is: " + correctAnswer;
+      document.getElementById("prompt").innerHTML = "Sorry, the correct answer was: " + correctAnswer;
       console.log("Score: " + score);
       currentQuestion++;
+      //add a small delay before showing the next question or ending the game
+      setTimeout(function() {
+         document.getElementById("prompt").innerHTML = "";
+      }, 2000);
    }
    
    //check if game is over
