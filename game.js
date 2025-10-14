@@ -14,8 +14,6 @@ var currentQuestion = 0;
 var score = 0;
 var totalQuestions = questions.length;
 var gameOver = false;
-//correct answer is the second element in each question array
-correctAnswerIndex = 1;
 
 //make sure reset button is disabled when page first loads
 document.getElementById("reset").disabled = true;
