@@ -84,7 +84,6 @@ function checkAnswer(event) {
 function displayQuestion() {
    //check if there are more questions
    if (questions.length > 0) {
-        document.getElementById("prompt").innerHTML = "Question " + questionCount + " of " + totalQuestions;
         //display question from questions array for current question
         document.getElementById("question").innerHTML = questions[0][0];
         //display possible answers from questions array for current question
