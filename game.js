@@ -1,20 +1,21 @@
+// buttons and event listeners to start and reset game
+document.getElementById("play").addEventListener("click", playGame);
+document.getElementById("reset").addEventListener("click", resetGame);
+document.getElementById("reset").disabled = true;
+
 //multi dimensional questions and answers array
 var questions = [
    ["What is the capital of India?", 4, "A. Bollywood", "B. Ghandi", "C. New Delhi"],
    ["How many colors are in a rainbow?", 4, "A. 4", "B. 20", "C. 7"],
    ["What is the hardest natural substance on Earth?", 4, "A. Water", "B. Plastic", "C. Diamond"]
 ];
+
 //initialize variables
 var currentQuestion = 0;
 var questionCount = 0;
 var score = 0;
 var totalQuestions = questions.length;
 var gameOver = false;
-
-//make sure reset button is disabled when page first loads
-document.getElementById("reset").disabled = true;
-document.getElementById("play").addEventListener("click", playGame);
-document.getElementById("reset").addEventListener("click", resetGame);
 
 //reset game function
 function resetGame() {
@@ -59,12 +60,11 @@ function checkAnswer(event) {
     }
     //shift current question from array and move to next question
     questions.shift();
-    questionCount++;
     console.log("Questions left: " + questions.length);
     console.log("Current Question: " + currentQuestion);
     console.log("Question Count: " + questionCount);
     console.log("Total Questions: " + totalQuestions);
-    
+
     //check if game is over
     if (questions.length === 0) {
         gameOver = true;
