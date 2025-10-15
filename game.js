@@ -85,7 +85,7 @@ function displayQuestion() {
    //check if there are more questions
    if (questions.length > 0) {
         //display question from questions array for current question
-        document.getElementById("question").innerHTML = questions[0][0];
+        document.getElementById("question").innerHTML = ("Question "+ questionCount+". " + questions[0][0]);
         //display possible answers from questions array for current question
         var answersList = document.getElementById("answers");
         answersList.innerHTML = "";
