@@ -83,30 +83,29 @@ function checkAnswer(event) {
 //function to display question and possible answers
 function displayQuestion() {
    //check if there are more questions
-   if (currentQuestion) {
-        //display question count and question number
-        questionCount++;
+   if (questions.length > 0) {
         document.getElementById("prompt").innerHTML = "Question " + questionCount + " of " + totalQuestions;
         //display question from questions array for current question
         document.getElementById("question").innerHTML = questions[0][0];
         //display possible answers from questions array for current question
         var answersList = document.getElementById("answers");
         answersList.innerHTML = "";
-        for (var i = 2; i < questions[currentQuestion].length; i++) {
+        for (var i = 2; i < questions[0].length; i++) {
             var listItem = document.createElement("li");
-            listItem.innerHTML = questions[currentQuestion][i];
+            listItem.innerHTML = questions[0][i];
             listItem.addEventListener("click", checkAnswer);
             answersList.appendChild(listItem);
         }
+        questionCount++;
    }
 }
 
 //function to start the game
 function playGame() {
-   //disable play button and enable reset button
-   document.getElementById("play").disabled = true;
-   document.getElementById("reset").disabled = false;
-    document.getElementById("prompt").innerHTML = "Question 1 of " + totalQuestions;
+    //disable play button and enable reset button
+    document.getElementById("play").disabled = true;
+    document.getElementById("reset").disabled = false;
+    document.getElementById("prompt").innerHTML = "Question "+questionCount+" of " + totalQuestions;
     currentQuestion = 0;
     questionCount = 1;
     score = 0;
