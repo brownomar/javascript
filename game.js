@@ -19,9 +19,9 @@ var gameOver = false;
 
 //reset game function
 function resetGame() {
-   currentQuestion = 0;
-   questionCount = 0;
-   score = 0;
+    currentQuestion = 0;
+    questionCount = 0;
+    score = 0;
     gameOver = false;
     //reset array
     questions = [
@@ -93,6 +93,16 @@ function displayQuestion() {
             var listItem = document.createElement("li");
             listItem.innerHTML = questions[0][i];
             listItem.addEventListener("click", checkAnswer);
+            //add mouseover pointer style to list items
+            listItem.style.cursor = "pointer";
+            //hover effect for list items
+            listItem.addEventListener("mouseover", function() {
+                this.style.backgroundColor = "#f0f0f0";
+            });
+            listItem.addEventListener("mouseout", function() {
+                this.style.backgroundColor = "";
+            });
+            //append list item to answers list
             answersList.appendChild(listItem);
         }
         questionCount++;
