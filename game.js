@@ -70,7 +70,7 @@ function checkAnswer(event) {
         gameOver = true;
     }
     if (gameOver) {
-        document.getElementById("question").innerHTML = "Game Over! You scored " + score + " out of " + totalQuestions + ".";
+        document.getElementById("question").innerHTML = "Game Over! You scored " + score + " out of " + totalQuestions + ".<br><strong>Click the Reset button to restart the game.</strong>";
         document.getElementById("answers").innerHTML = "";
         document.getElementById("play").disabled = true;
         document.getElementById("reset").disabled = false;
