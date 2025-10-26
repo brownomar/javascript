@@ -1,3 +1,4 @@
+
 // create a months array
 var months = ['January', 'February','March','April','May','June','July','August','September','October','November', 'December'];
 // create a tips array
@@ -18,3 +19,35 @@ var specials = ["<p>Don't forget our feathered friends!</p><p>All bird feeders a
 "<p><strong>Jack-O-Lanterns</strong></p><p>Pumpkins: <br>large $8.99<br>small $5.99<br>Decorative pumpkins: <br>$7.99-11.99<br>Gourds: $6.99</p>",
 "<p>Trees and shrubs: 1/2 price - in stock only.</p>",
 "<p>Christmas trees!</p><p>We have sizes from 3' to 15' and lots of varieties. Find the perfect fit for your family while they last!</p>"];
+//season array
+var seasonConfig = [["winter", "winterbg.jpg", #00f], ["spring", "springbg.jpg", #d7d], ["summer", "summerbg.jpg", #006400], ["fall", "fallbg.jpg", #930]];
+//set index for each season
+var seasonIndex = function(monthIndex) {
+    if (monthIndex == 11 || monthIndex == 0 || monthIndex == 1) {
+        return 0; // winter
+    } else if (monthIndex >= 2 && monthIndex <= 4) {
+        return 1; // spring
+    } else if (monthIndex >= 5 && monthIndex <= 7) {
+        return 2; // summer
+    } else {
+        return 3; // fall
+    }
+};
+
+//ready function
+$(document).ready(function(){
+    // jQuery code goes here
+    console.log("jQuery is ready!");
+    // get the current date
+    var currentDate = new Date();
+    // get current month index for month name, tip, and special use id and tags from jquery-intro.html
+    var monthIndex = currentDate.getMonth();
+    // set month name
+    console.log("the current month index is " + monthIndex + " and the month is " + months[monthIndex]);
+    $("#month").text(months[monthIndex]);
+    // set tip of the month
+    $("#seasontips").html(tips[monthIndex]);
+    // set special of the month
+    $("#specials").html(specials[monthIndex]);
+    
+});
