@@ -33,6 +33,18 @@ var seasonIndex = function(monthIndex) {
         return 3; // fall
     }
 };
+//get season name
+var getSeasonName = function(monthIndex) {
+    return seasonConfig[seasonIndex(monthIndex)][0];
+};
+//get season background image
+var getSeasonBg = function(monthIndex) {
+    return seasonConfig[seasonIndex(monthIndex)][1];
+};
+//get season header color
+var getSeasonColor = function(monthIndex) {
+    return seasonConfig[seasonIndex(monthIndex)][2];
+};
 
 //ready function
 $(document).ready(function(){
@@ -45,9 +57,27 @@ $(document).ready(function(){
     // set month name
     console.log("the current month index is " + monthIndex + " and the month is " + months[monthIndex]);
     $("#month").text(months[monthIndex]);
-    // set tip of the month
-    $("#seasontips").html(tips[monthIndex]);
+    // set tip bsed on season
+    $("#seasontips").html(tips[seasonIndex(monthIndex)]);
     // set special of the month
     $("#specials").html(specials[monthIndex]);
+    //change h1, h2, and h3 text colors based on season
+    var seasonColor = getSeasonColor(monthIndex);
+    $("h1, h2, h3").css("color", seasonColor);
+    //change background image based on season
+    var seasonBg = getSeasonBg(monthIndex);
+    $("body").css("background-image", "url('images/" + seasonBg + "')");
     
+    //darken and lighten text color based on season color for readability
+    if (seasonColor == "#00f" || seasonColor == "#006400") {
+        $("body").css("color", "#fff");
+    }
+    else {
+        $("body").css("color", "#000");
+    }
+
+    //unit testing logs
+    console.log("Season name: " + getSeasonName(monthIndex));
+    console.log("Season background image: " + getSeasonBg(monthIndex));
+    console.log("Season header color: " + getSeasonColor(monthIndex));
 });
