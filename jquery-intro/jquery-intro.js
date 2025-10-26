@@ -20,7 +20,7 @@ var specials = ["<p>Don't forget our feathered friends!</p><p>All bird feeders a
 "<p>Trees and shrubs: 1/2 price - in stock only.</p>",
 "<p>Christmas trees!</p><p>We have sizes from 3' to 15' and lots of varieties. Find the perfect fit for your family while they last!</p>"];
 //season array
-var seasonConfig = [["winter", "winterbg.jpg", #00f], ["spring", "springbg.jpg", #d7d], ["summer", "summerbg.jpg", #006400], ["fall", "fallbg.jpg", #930]];
+var seasonConfig = [["winter", "winterbg.jpg", "#00f"], ["spring", "springbg.jpg", "#d7d"], ["summer", "summerbg.jpg", "#006400"], ["fall", "fallbg.jpg", "#930"]];
 //set index for each season
 var seasonIndex = function(monthIndex) {
     if (monthIndex == 11 || monthIndex == 0 || monthIndex == 1) {
