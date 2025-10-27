@@ -64,9 +64,15 @@ $(document).ready(function(){
     //change h1, h2, and h3 text colors based on season
     var seasonColor = getSeasonColor(monthIndex);
     $("h1, h2, h3").css("color", seasonColor);
-    //change background image based on season
+    //change background image based on season - image fills screen and is fixed in place
     var seasonBg = getSeasonBg(monthIndex);
-    $("body").css("background-image", "url(" + seasonBg +")").imagefill();
+    $("body").css({
+        "background-image": "url(" + seasonBg +")",
+        "backgoround-size": "cover",
+        "background-postition": "center",
+        "background-repeat": "no-repeat",
+        "background-attachment": "fixed"
+    });
     
     //unit testing logs
     console.log("Season name: " + getSeasonName(monthIndex));
