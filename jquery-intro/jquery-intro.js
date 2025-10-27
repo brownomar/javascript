@@ -22,16 +22,28 @@ var specials = ["<p>Don't forget our feathered friends!</p><p>All bird feeders a
 
 //season array with background images and header colors
 var seasonConfig = [["winter", "winterbg.jpg", "#00f"], ["spring", "springbg.jpg", "#d7d"], ["summer", "summerbg.jpg", "#006400"], ["fall", "fallbg.jpg", "#930"]];
-//set index for each season
+
+//set index for each season with a switch statement
 var seasonIndex = function(monthIndex) {
-    if (monthIndex == 11 || monthIndex == 0 || monthIndex == 1) {
-        return 0; // winter
-    } else if (monthIndex >= 2 && monthIndex <= 4) {
-        return 1; // spring
-    } else if (monthIndex >= 5 && monthIndex <= 7) {
-        return 2; // summer
-    } else {
-        return 3; // fall
+    switch(monthIndex) {
+        case 11:
+        case 0:
+        case 1:
+            return 0; // winter
+        case 2:
+        case 3:
+        case 4:
+            return 1; // spring
+        case 5:
+        case 6:
+        case 7:
+            return 2; // summer
+        case 8:
+        case 9:
+        case 10:
+            return 3; // fall
+        default:
+            return 0; // failsafe to winter
     }
 };
 //get season name
@@ -57,6 +69,7 @@ $(document).ready(function(){
     /*TEST EACH SEASON
     --uncomment one of the lines below and comment out the line above to test different months--*/
     //var currentDate = new Date("2024-01-15"); // January - WINTER
+    //var currentDate = new Date("2024-12-15"); // December - WINTER Holiday message test
     //var currentDate = new Date("2024-04-15"); // April - SPRING
     //var currentDate = new Date("2024-07-15"); // July - SUMMER
     //var currentDate = new Date("2024-10-15"); // October - FALL
@@ -67,12 +80,14 @@ $(document).ready(function(){
     // set month name
     console.log("the current month index is " + monthIndex + " and the month is " + months[monthIndex]);
     $("#month").text(months[monthIndex]);
+    //add happy holidays for december
+    if (monthIndex === 11) {
+        $("#month").after("<h2>Happy Holidays!</h2>");
+    }
     // set tip based on season
     $("#seasontips").html(tips[seasonIndex(monthIndex)]);
-    // set special of the month
-    $("#specials").html(specials[monthIndex]);
-    //add class to specials id with name of season 
-    $("#specials").addClass(getSeasonName(monthIndex));
+    // set special of the month and add season class to specials div
+    $("#specials").html(specials[monthIndex]).addClass(getSeasonName(monthIndex));
     //change h1, h2, and h3 text colors based on season
     var seasonColor = getSeasonColor(monthIndex);
     $("h1, h2, h3").css("color", seasonColor);
@@ -80,8 +95,8 @@ $(document).ready(function(){
     var seasonBg = getSeasonBg(monthIndex);
     $("body").css({
         "background-image": "url(" + seasonBg +")",
-        "backgoround-size": "cover",
-        "background-postition": "center",
+        "background-size": "cover",
+        "background-position": "center",
         "background-repeat": "no-repeat",
         "background-attachment": "fixed"
     });
