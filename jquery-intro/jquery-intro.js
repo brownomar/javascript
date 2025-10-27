@@ -57,7 +57,7 @@ $(document).ready(function(){
     // set month name
     console.log("the current month index is " + monthIndex + " and the month is " + months[monthIndex]);
     $("#month").text(months[monthIndex]);
-    // set tip bsed on season
+    // set tip based on season
     $("#seasontips").html(tips[seasonIndex(monthIndex)]);
     // set special of the month
     $("#specials").html(specials[monthIndex]);
@@ -66,7 +66,7 @@ $(document).ready(function(){
     $("h1, h2, h3").css("color", seasonColor);
     //change background image based on season
     var seasonBg = getSeasonBg(monthIndex);
-    $("body").css("background-image", seasonBg);
+    $("body").css("background-image", "url(" + seasonBg +")");
     
     //unit testing logs
     console.log("Season name: " + getSeasonName(monthIndex));
