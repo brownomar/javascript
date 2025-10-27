@@ -52,13 +52,13 @@ $(document).ready(function(){
     // jQuery code goes here
     console.log("jQuery is ready!");
     // get the current date
-    var currentDate = new Date();
+    //var currentDate = new Date();
     
-    /*TEST EACH SEASON
+    /*TESTING PURPOSES
     --uncomment one of the lines below and comment out the line above to test different months--*/
     //var currentDate = new Date("2024-01-15"); // January - WINTER
     //var currentDate = new Date("2024-04-15"); // April - SPRING
-    //var currentDate = new Date("2024-07-15"); // July - SUMMER
+    var currentDate = new Date("2024-07-15"); // July - SUMMER
     //var currentDate = new Date("2024-10-15"); // October - FALL
 
     console.log("the current date is " + currentDate);
