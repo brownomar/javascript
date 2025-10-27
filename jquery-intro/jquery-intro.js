@@ -19,7 +19,8 @@ var specials = ["<p>Don't forget our feathered friends!</p><p>All bird feeders a
 "<p><strong>Jack-O-Lanterns</strong></p><p>Pumpkins: <br>large $8.99<br>small $5.99<br>Decorative pumpkins: <br>$7.99-11.99<br>Gourds: $6.99</p>",
 "<p>Trees and shrubs: 1/2 price - in stock only.</p>",
 "<p>Christmas trees!</p><p>We have sizes from 3' to 15' and lots of varieties. Find the perfect fit for your family while they last!</p>"];
-//season array
+
+//season array with background images and header colors
 var seasonConfig = [["winter", "winterbg.jpg", "#00f"], ["spring", "springbg.jpg", "#d7d"], ["summer", "summerbg.jpg", "#006400"], ["fall", "fallbg.jpg", "#930"]];
 //set index for each season
 var seasonIndex = function(monthIndex) {
@@ -51,7 +52,16 @@ $(document).ready(function(){
     // jQuery code goes here
     console.log("jQuery is ready!");
     // get the current date
-    var currentDate = new Date();
+    //var currentDate = new Date();
+    
+    /*TESTING PURPOSES
+    --uncomment one of the lines below and comment out the line above to test different months--*/
+    var currentDate = new Date("2024-01-15"); // January - WINTER
+    //var currentDate = new Date("2024-04-15"); // April - SPRING
+    //var currentDate = new Date("2024-07-15"); // July - SUMMER
+    //var currentDate = new Date("2024-10-15"); // October - FALL
+
+    console.log("the current date is " + currentDate);
     // get current month index for month name, tip, and special use id and tags from jquery-intro.html
     var monthIndex = currentDate.getMonth();
     // set month name
@@ -61,6 +71,8 @@ $(document).ready(function(){
     $("#seasontips").html(tips[seasonIndex(monthIndex)]);
     // set special of the month
     $("#specials").html(specials[monthIndex]);
+    //add class to specials id with name of season 
+    $("#specials").addClass(getSeasonName(monthIndex));
     //change h1, h2, and h3 text colors based on season
     var seasonColor = getSeasonColor(monthIndex);
     $("h1, h2, h3").css("color", seasonColor);
