@@ -66,7 +66,7 @@ $(document).ready(function(){
     $("h1, h2, h3").css("color", seasonColor);
     //change background image based on season
     var seasonBg = getSeasonBg(monthIndex);
-    $("body").css("background-image", "url(" + seasonBg +")");
+    $("body").css("background-image", "url(" + seasonBg +")").imagefill();
     
     //unit testing logs
     console.log("Season name: " + getSeasonName(monthIndex));
