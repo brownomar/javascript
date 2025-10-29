@@ -18,6 +18,8 @@ $(document).ready(function() {
     });
     //hide imgdiv on mouseout
     $(".pic").mouseout(function() {
+        //get the id of the imgdiv to show
+        var imgID = "#" + $(this).attr("title");
         //hide the imgdiv
         $(imgID).hide();
     });
