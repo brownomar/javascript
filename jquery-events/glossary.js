@@ -1,11 +1,12 @@
 //page load function
 $(document).ready(function() {
+    //hovering over flower names changes cursor to pointer
+    $(".flower").css("cursor", "pointer");
     //hide bonanic names until flower id is clicked
     $(".botanic").hide();
-    //first hide any displayed botanic names when flower id is clicked and change pointer to hand
+    //first hide any displayed botanic names when flower clicked
     $(".flower").click(function() {
         $(".botanic").hide();
-        $(this).css("cursor", "pointer");
     });
     //display botanic names when flower id is clicked
     $(".flower").click(function() {
