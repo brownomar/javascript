@@ -108,3 +108,10 @@ input[type='submit'] {
 footer {
   clear: both;
 }
+
+.pic {
+	border-bottom: thin dashed darkgreen;
+}
+.imgdiv { 
+	position: absolute;
+}

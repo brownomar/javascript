@@ -1,5 +1,7 @@
 //page load function
 $(document).ready(function() {
+    //hide botanic names on page load
+    $(".botanic").hide();
     //hovering over flower names changes cursor to pointer
     $(".flower").css("cursor", "pointer");
     //hide any displayed botanic names when flower clicked
@@ -23,6 +25,6 @@ $(document).ready(function() {
     $("h2").mouseout(function() {
         $(this).css("color", "black");
     });
-    
+
 
 });
