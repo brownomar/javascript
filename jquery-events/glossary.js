@@ -5,11 +5,10 @@ $(document).ready(function() {
     //hide the imgdivs on page load
     $(".imgdiv").hide();
     //mouseover and mouseout to show/hide images for pic spans
-    //get attribute and concatenate # with alt attribute value
-    var imgID = "#" + $(this).attr("alt");
-    console.log(imgID);
     //put x y coordinates of event in variable
     $(".pic").mouseover(function(event) {
+        //get the id of the imgdiv to show
+        var imgID = "#" + $(this).attr("title");
         var x = event.pageX + 150;
         var y = event.pageY;
         //set css position of imgdivs to x and y coordinates
@@ -22,7 +21,7 @@ $(document).ready(function() {
         //hide the imgdiv
         $(imgID).hide();
     });
-    
+
     //hovering over flower names changes cursor to pointer
     $(".flower").css("cursor", "pointer");
     //hide any displayed botanic names when flower clicked
