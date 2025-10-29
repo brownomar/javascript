@@ -1,10 +1,16 @@
 //page load function
 $(document).ready(function() {
-    //mouseover and mouseout changes heading color
-    $("dt").mouseover(function() {
+    //mouseover and mouseout changes h1 and h2 colors
+    $("h1").mouseover(function() {
+        $(this).css("color", "red");
+    });
+    $("h1").mouseout(function() {
+        $(this).css("color", "black");
+    });
+    $("h2").mouseover(function() {
         $(this).css("color", "blue");
     });
-    $("dt").mouseout(function() {
+    $("h2").mouseout(function() {
         $(this).css("color", "black");
     });
     //hide botanic names and display individual ones when flower clicked
