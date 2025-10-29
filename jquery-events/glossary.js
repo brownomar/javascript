@@ -2,9 +2,10 @@
 $(document).ready(function() {
     //hide bonanic names until flower id is clicked
     $(".botanic").hide();
-    //first hide any displayed botanic names when flower id is clicked
+    //first hide any displayed botanic names when flower id is clicked and change pointer to hand
     $(".flower").click(function() {
         $(".botanic").hide();
+        $(this).css("cursor", "pointer");
     });
     //display botanic names when flower id is clicked
     $(".flower").click(function() {
