@@ -50,18 +50,10 @@ $(document).ready(function() {
 
     //keypress scrolls to alphabet letter section
     $(document).keypress(function(event) {
-        //get the key pressed converted to lowercase
-        var key = String.fromCharCode(event.which).toLowerCase();
-        //scroll to the section with the corresponding letter id
-        var letterID = "#" + key;
-        //check if the letterID exists on the page
-        if ($(letterID).length) {
-            //scroll to the letter section
-            $('html, body').animate({
-                scrollTop: $(letterID).offset().top
-            }, 500);
-        }
+        //get variable for keypressed
+        var keyPressed = String.fromCharCode(event.which).toLowerCase();
+        //scroll to section with id matching keypressed using window.location
+        window.location = "#" + keyPressed;
     });
-
 
 });
