@@ -6,6 +6,8 @@ $(document).ready(function(){
     $("#signuplink").click(function(event){
         //prevent default action of the link
         event.preventDefault();
+        //toggle the form
+        $("#newsSignup").slideToggle(500);
         //open and close form with +/-
         var signuplink = $("#openclose").text();
         //toggle + and -
