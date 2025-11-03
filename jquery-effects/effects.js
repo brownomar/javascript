@@ -29,13 +29,24 @@ $(document).ready(function(){
     });
 
     $('#slogan').mouseout(function(){
-        //fade slogan out at fast speed with swing
+        //fade slogan out fast/swing
         $('#slogan').fadeOut("fast", "swing", function(){
-        //change text back to original slowly with linear easing
+        //change text back to original slow/linear
         $('#slogan').text("The Power of Flowers").fadeIn("slow", "linear");
         });
     });
     
+    //start rose at 100px at 1 opacity
+    $('#rose').css({right: '-100px', opacity: 0});
+    //fade slide in swing over 2 seconds
+    $('#rose').animate({right: '20px', opacity: 1}, 2000, "swing");
 
-
+    //event handler for form submission
+    $('#newsSignup').submit(function(event){
+        alert("Thank you for registering");
+        $('#newsSignup').hide();
+        $('#signuplink').fadeTo("slow", 0.3);
+        //stop default submit action
+        event.preventDefault();
+    });
 });
