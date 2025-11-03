@@ -46,7 +46,8 @@ $(document).ready(function(){
         alert("Thank you for registering");
         $('#newsSignup').hide();
         $('#signuplink').fadeTo("slow", 0.3);
-        //stop default submit action
+        //disable form submission
         event.preventDefault();
     });
+    
 });
