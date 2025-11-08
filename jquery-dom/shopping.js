@@ -1,7 +1,7 @@
 //variable to count number of items in cart
 let itemCount = 0;
-//change cursor to pointer for add to cart buttons
-$('.add').css('cursor', 'pointer');
+//change cursor to pointer for starts and add to cart elements
+$('.rating span, .add').css('cursor', 'pointer');
 //variable to hold html for creating a delete button 
 const deleteButtonHTML = '<span class="delete">X</span>';
 //add click event listener to add to cart buttons
