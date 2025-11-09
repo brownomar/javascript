@@ -53,7 +53,7 @@ hr {
 
 .rating {
   display: inline-block;
-  float: right;
+  float: none;
   cursor: pointer;
 }
 

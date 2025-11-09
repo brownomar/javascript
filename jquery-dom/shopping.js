@@ -3,7 +3,7 @@
 $(document).ready(function() {
     //variable to count number of items in cart
     let itemCount = 0;
-    
+
     //add click event listener to add to cart buttons
     $('.add').on('click', function() {
         
@@ -43,5 +43,21 @@ $(document).ready(function() {
             $('#cart ul').remove();
         }
     });
-});
 
+    //change staron.gif and staroff.gif on hover
+    $('.rating img').hover(function() {
+        //get the index of the hovered star
+        const index = $(this).index();
+        //on mouse click set all stars up to and including the clicked star to staron.gif
+        $(this).parent().click(function() {
+            $(this).children('img').each(function(i) {
+                if (i <= index) {
+                    $(this).attr('src', 'staron.gif');
+                } else {
+                    $(this).attr('src', 'staroff.gif');
+                }
+            });
+        });
+        
+    });
+});
