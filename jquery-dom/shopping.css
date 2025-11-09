@@ -54,6 +54,7 @@ hr {
 .rating {
   display: inline-block;
   float: right;
+  cursor: pointer;
 }
 
 .add {
@@ -69,6 +70,7 @@ hr {
   color: darkgreen;
   font-weight: bold;
   float: left;
+  cursor: pointer;
 }
 
 .del {
@@ -80,6 +82,7 @@ hr {
   border-radius: 15px;
   color: darkgreen;
   font-size: .75em;
+  cursor: pointer;
 }
 
 .wrapper {
