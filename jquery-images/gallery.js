@@ -8,8 +8,10 @@ $('img').css('cursor', 'pointer');
 $('#thumbs').mouseover(function(event) {
     //add thin dark green border on hovear
     $(this).css('border', '2px solid darkgreen');
+    $(this).css('box-shadow', '5px 5px 5px gray');
     }).mouseout(function() {
         $(this).css('border', 'none');
+        $(this).css('box-shadow', 'none');
         
     });
 
