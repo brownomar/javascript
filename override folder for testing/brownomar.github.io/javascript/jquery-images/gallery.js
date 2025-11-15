@@ -2,15 +2,12 @@
 $(document).ready(function(){
 //variable for image name
 var displayImg = '';
-//pointer
-$('img').css('cursor', 'pointer');
 //hover effect
 $('#thumbs').mouseover(function(event) {
     //add thin dark green border on hovear
     $(this).css('border', '2px solid darkgreen');
     }).mouseout(function() {
         $(this).css('border', 'none');
-        
     });
 
 //click each smaller image to change larger image
