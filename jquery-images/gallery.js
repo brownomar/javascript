@@ -20,7 +20,7 @@ $('#thumbs img').click(function() {
 
 //click large image to open in the image in new window
 $('lgPic').click(function() {
-    window.open(this).attr('src', '_blank');
+    window.open($(this).attr('src'), '_blank');
 });
 
 });
