@@ -8,6 +8,8 @@ $('#thumbs').mouseover(function(event) {
     $(this).css('border', '2px solid darkgreen');
     }).mouseout(function() {
         $(this).css('border', 'none');
+        //pointer
+        $('img').css('cursor', 'pointer');
     });
 
 //click each smaller image to change larger image
@@ -19,7 +21,7 @@ $('#thumbs img').click(function() {
 });
 
 //click large image to open in the image in new window
-$('lgPic').click(function() {
+$('#lgPic').click(function() {
     window.open($(this).attr('src'), '_blank');
 });
 
