@@ -17,10 +17,13 @@ $('#thumbs').mouseover(function(event) {
 
 //click each smaller image to change larger image
 $('#thumbs img').click(function() {
-    //getr src of clicked thumb
+    //get src of clicked thumb
     displayImg = $(this).attr('src');
-    //set src to large image
+    //get new title
+    displayTitle = $(this).attr('alt');
+    //set src and alt to large image and title
     $('#lgPic').attr('src', displayImg);
+    $('#lgTitle').text(displayTitle);
 });
 
 //click large image to open in the image in new window
