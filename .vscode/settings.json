@@ -1,0 +1,5 @@
+{
+    "editor.suggest.showMethods": true,
+    "editor.suggest.showModules": true,
+    "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false
+}
