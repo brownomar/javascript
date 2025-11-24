@@ -35,14 +35,14 @@ console.log("ready");
             $('#cityErr').text('');
         } 
     });
-    //state field required
-     $('#state').blur(function(){
-        var stateVal = $(this).val();
-        if (stateVal === ''){
-            $('#stateErr').text('State is required');
+    //zip field required
+     $('#zip').blur(function(){
+        var zipVal = $(this).val();
+        if (zipVal === ''){
+            $('#zipErr').text('Zip Code is required');
         }
         else{
-            $('#stateErr').text('');
+            $('#zipErr').text('');
         } 
     });
     //email required and valid
