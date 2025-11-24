@@ -4,33 +4,33 @@ console.log("ready");
 //Fly, you fools!
     //put cursor in name field
     $('#name').focus();
+    //$('#name').val('test');
+    console.log('test');
 
     //name field required
-    var nameVal = $('#name').val();
     $('#name').blur(function(){
-        
-        if (nameVal = ''){
-            $('#nameError').text('Name is required');
+        var nameVal = $(this).val();
+        if (nameVal === ''){
+            $('#nameErr').text('Name is required');
         }else{
-            $('#nameError').text('');
+            $('#nameErr').text('');
         } 
     });
-    //email required and valid
-    var emailVal = $('#email').val();
-    $('#email').blur(function(){
+    // //email required and valid
+    // $('#email').blur(function(){
+    // var emailVal = $(this).val();    
         
-        
-        if (emailVal = ''){
-            $('#emailError').text('Email is required');
-            }
-        else{
-            $('#emailError').text('');
-            var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-            if (emailRegex.test(emailVal)){
-                $('#emailError').text('');
-            }else{
-                $('#emailError').text('Invalid email');
-            }
-        }
-    })
+    //     if (emailVal ===''){
+    //         $('#emailErr').val('Email is required');
+    //         }
+    //     else{
+    //         $('#emailErr').val('');
+    //         var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    //         if (emailRegex.val(emailVal)){
+    //             $(this).val('');
+    //         }else{
+    //             $(this).val('Invalid email');
+    //         }
+    //     }
+    // })
 });

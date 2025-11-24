@@ -56,7 +56,8 @@ table {
 }
 td, th {
 	padding: .25em 1em;
-	border: thin green dotted;}
+	border: thin green dotted;
+}
 td[id] {
 	text-align: right;
 }
