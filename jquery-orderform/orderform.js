@@ -25,9 +25,9 @@ console.log("ready");
         else{
             var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
             if (emailRegex.test(emailVal)){
-                $('emailErr').text('');
+                $('#emailErr').text('');
             }else{
-                $('emailErr').text('Invalid email');
+                $('#emailErr').text('Invalid email');
             }
         }
          
