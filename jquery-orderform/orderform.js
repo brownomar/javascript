@@ -6,8 +6,9 @@ console.log("ready");
     $('#name').focus();
 
     //name field required
+    var nameVal = $('#name').val();
     $('#name').blur(function(){
-        var nameVal = $('#name').val();
+        
         if (nameVal = ''){
             $('#nameError').text('Name is required');
         }else{
@@ -15,8 +16,9 @@ console.log("ready");
         } 
     });
     //email required and valid
+    var emailVal = $('#email').val();
     $('#email').blur(function(){
-        var emailVal = $('#email').val();
+        
         
         if (emailVal = ''){
             $('#emailError').text('Email is required');
