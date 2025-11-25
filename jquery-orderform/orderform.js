@@ -60,6 +60,21 @@ console.log("ready");
             }
         }      
     });
+    //confirmation email required and valid
+   $('#email2').blur(function(){
+        var email2Val = $(this).val();
+        if (email2Val === ''){
+            $('#email2Err').text('Confirmation Email is required.');
+        }
+        else{
+            var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+            if (emailRegex.test(email2Val)){
+                $('#email2Err').text('');
+            }else{
+                $('#email2Err').text('Invalid email.');
+            }
+        }      
+    });
 
 
 
