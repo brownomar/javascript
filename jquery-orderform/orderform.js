@@ -15,6 +15,7 @@ console.log("ready");
             $('#nameErr').text('');
         } 
     });
+
     //address field required
     $('#address').blur(function(){
         var addressVal = $(this).val();
@@ -25,6 +26,7 @@ console.log("ready");
             $('#addressErr').text('');
         }
     });
+
     //city field required
      $('#city').blur(function(){
         var cityVal = $(this).val();
@@ -35,6 +37,7 @@ console.log("ready");
             $('#cityErr').text('');
         } 
     });
+
     //zip field required
      $('#zip').blur(function(){
         var zipVal = $(this).val();
@@ -50,6 +53,7 @@ console.log("ready");
             }
         }
     });
+
     //email required and valid
     $('#email').blur(function(){
         var emailVal = $(this).val();
@@ -65,6 +69,7 @@ console.log("ready");
             }
         }      
     });
+
     //address field required
     $('#shipaddr').blur(function(){
         var shipaddrVal = $(this).val();
@@ -75,6 +80,7 @@ console.log("ready");
             $('#shipaddrErr').text('');
         }
     });
+
     //city field required
      $('#shipcity').blur(function(){
         var shipcityVal = $(this).val();
@@ -132,20 +138,50 @@ console.log("ready");
     }
     });
 
-    //initialize grand total to 0
-    $('#gTotal').text('0.00');
+//choose sales tax by selected state: tx=.08, all others = 0
+    function getTax (){
+        var state = $('#state').val();
+        var salestax = 0;
+        if (state === 'TX'){
+            salestax = 0.08;
+        }
+        else{
+            salestax = 0;
+        }
+        return salestax;
+    };
+    
+//shipping: TX=5, ca and ny = 20, all others = 10
+    function getShipping (){
+        var state = $('#state').val();
+        var shipping = 0;
+        if (state === 'TX'){
+            shipping = 5;
+        }else if (state === 'CA' || state === 'NY'){
+            shipping = 20;
+        }else {
+            shipping = 10;
+        }
+        return shipping;
+    };
+    
+//initialize totals to 0
+    $('#total1').text(0);
+    $('#total2').text(0);
+    $('#total3').text(0);
+   
 
-    //get totals for each item
+//get totals for each item as quantity changes
     $('#1').change(function(){
         var qty1 = $('#1').val();
         var price1 = $('#price1').text();
         var tot1 = (qty1*price1);
-        $('#total1').text(tot1.toFixed(2));
+        $('#total1').text(tot1);
         //validate input is number
         if(isNaN(qty1)){
             $('#total1').text('0.00');
         }else{
-            $('#total1').text(tot1.toFixed(2));
+            $('#total1').text(tot1);
         }
         return tot1;
     });
@@ -153,12 +189,12 @@ console.log("ready");
         var qty2 = $('#2').val();
         var price2 = $('#price2').text();
         var tot2 = (qty2*price2);
-        $('#total2').text(tot2.toFixed(2));
+        $('#total2').text(tot2);
         //validate input is number
         if(isNaN(qty2)){
             $('#total2').text('0.00');
         }else{
-            $('#total2').text(tot2.toFixed(2));
+            $('#total2').text(tot2);
         }
         return tot2;
     });
@@ -166,58 +202,72 @@ console.log("ready");
         var qty3 = $('#3').val();
         var price3 = $('#price3').text();
         var tot3 = (qty3*price3);
-        $('#total3').text(tot3.toFixed(2));
+        $('#total3').text(tot3);
         //validate input is number
         if(isNaN(qty3)){
             $('#total3').text('0.00');
         }else{
-            $('#total3').text(tot3.toFixed(2));
+            $('#total3').text(tot3);
         }
         return tot3;
     });
 
-    //calculate subtotal
-    var subtotal = tot1 + tot2 + tot3;
-
-    //choose sales tax by selected state: tx=.08, all others = 0
-    var state = $('#state').val();
-    var salestax = 0;
-    if (state === 'TX'){
-        salestax = subtotal * 0.08;
-    }else{
-        salestax = 0;
-    }
-    //shipping: TX=5, ca and ny = 20, all others = 10
-    var shipping = 0;
-    if (state === 'TX'){
-        shipping = 5;
-    }else if (state === 'CA' || state === 'NY'){
-        shipping = 20;
-    }else {
-        shipping = 10;
-    }
-    console.log(subtotal, salestax, shipping);
-    //display subtotal, sales tax, shipping
-    $('#subt').text(subtotal.toFixed(2));
-    $('#tax').text(salestax.toFixed(2));
-    $('#ship').text(shipping.toFixed(2));
-    
-    //calculate grand total
-    var grandtotal = subtotal + salestax + shipping;
-    $('#gTotal').text(grandtotal.toFixed(2));
-
-    //disable submit if errors are present
-    $(span).each(function(){
-        if ($(this).text()){
-            $('#place').attr('disabled',true);
+//calculate subtotal
+    function getSubt(tot1, tot2, tot3){
+        var subtotal = tot1 + tot2 + tot3;
+        if (isNaN(subtotal)){
+            subtotal = 0;
+        }else{
+        $('#subt').text(subtotal);
         }
-        else{
-            $('#place').removeAttr('disabled');
-        }
+        return subtotal;
+    }
 
+    //update subt when quantity changes
+    $('#1, #2, #3').change(function(){
+        var tot1 = parseFloat($('#total1').text()) || 0;
+        var tot2 = parseFloat($('#total2').text()) || 0;
+        var tot3 = parseFloat($('#total3').text()) || 0;
+        var subtotal = getSubt(tot1, tot2, tot3);
+        return subtotal;
+    });
+//display subtotal
+$('#subt').text(getSubt());
+
+//update sales tax when state changes
+    $('#state').change(function(){
+        var subtotal = parseFloat($('#subt').text()) || 0;
+        var salestaxRate = getTax();
+        var salestax = (subtotal * salestaxRate).toFixed(2);
+        $('#tax').text(salestax);
+        return salestax;
+    });
+//calculate tax after subtotal changes
+    $('#1, #2, #3').change(function(){
+        var subtotal = parseFloat($('#subt').text()) || 0;
+        var salestaxRate = getTax();
+        var salestax = (subtotal * salestaxRate).toFixed(2);
+        var shipping = getShipping();
+        $('#tax').text(salestax);
+        return salestax;
     });
     
-    
+    //calculate grand total
+    function getGrand(){
+        var grandtotal = subtotal + salestax + shipping;
+        return grandtotal;
+    }
 
+    $('#gTotal').text(grandtotal);
+
+    // //disable submit if errors are present
+    // $('span').each(function(){
+    //     if ($(this).text()){
+    //         $('#place').attr('disabled',true);
+    //     }
+    //     else{
+    //         $('#place').removeAttr('disabled');
+    //     }
+    // });
 
 });
