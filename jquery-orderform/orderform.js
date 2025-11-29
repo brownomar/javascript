@@ -169,6 +169,10 @@ console.log("ready");
     $('#total1').text(0);
     $('#total2').text(0);
     $('#total3').text(0);
+    $('#tax').text(0);
+    $('#ship').text(0);
+    $('#subt').text(0);
+    $('#gTotal').text(0);
    
 
 //get totals for each item as quantity changes
@@ -247,27 +251,48 @@ $('#subt').text(getSubt());
         var subtotal = parseFloat($('#subt').text()) || 0;
         var salestaxRate = getTax();
         var salestax = (subtotal * salestaxRate).toFixed(2);
-        var shipping = getShipping();
+        
         $('#tax').text(salestax);
         return salestax;
     });
     
+
+//update shipping when state changes
+    $('#state').change(function(){
+        var shipping = getShipping();
+        $('#ship').text(shipping);
+        return shipping;
+    });
+
     //calculate grand total
     function getGrand(){
         var grandtotal = subtotal + salestax + shipping;
         return grandtotal;
     }
-
-    $('#gTotal').text(grandtotal);
+//update grand total when anything changes
+    $('#1, #2, #3, #state').change(function(){
+        var subtotal = parseFloat($('#subt').text()) || 0;
+        var salestax = parseFloat($('#tax').text()) || 0;
+        var shipping = parseFloat($('#ship').text()) || 0;
+        var grandtotal = (subtotal + salestax + shipping).toFixed(2);
+        $('#gTotal').text(grandtotal);
+        return grandtotal;
+    });
 
     // //disable submit if errors are present
-    // $('span').each(function(){
-    //     if ($(this).text()){
-    //         $('#place').attr('disabled',true);
-    //     }
-    //     else{
-    //         $('#place').removeAttr('disabled');
-    //     }
-    // });
+    $('form').submit(function(event){
+        if ($('#nameErr').text() !== '' ||
+            $('#addressErr').text() !== '' ||
+            $('#cityErr').text() !== '' ||
+            $('#zipErr').text() !== '' ||
+            $('#emailErr').text() !== '' ||
+            $('#shipaddrErr').text() !== '' ||
+            $('#shipcityErr').text() !== '' ||
+            $('#shipzipErr').text() !== '' ||
+            $('#email2Err').text() !== ''){
+                event.preventDefault();
+                alert('Please fix errors before submitting form.');
+            }
+    });
 
 });
