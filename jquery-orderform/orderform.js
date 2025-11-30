@@ -162,7 +162,7 @@ console.log("ready");
         }else {
             shipping = 10;
         }
-        return shipping;
+        return shipping.toFixed(2);
     };
     
 //initialize totals to 0
@@ -264,11 +264,6 @@ $('#subt').text(getSubt());
         return shipping;
     });
 
-    //calculate grand total
-    function getGrand(){
-        var grandtotal = subtotal + salestax + shipping;
-        return grandtotal;
-    }
 //update grand total when anything changes
     $('#1, #2, #3, #state').change(function(){
         var subtotal = parseFloat($('#subt').text()) || 0;
@@ -280,7 +275,7 @@ $('#subt').text(getSubt());
     });
 
     // //disable submit if errors are present
-    $('form').submit(function(event){
+    $('#place').click(function(event){
         if ($('#nameErr').text() !== '' ||
             $('#addressErr').text() !== '' ||
             $('#cityErr').text() !== '' ||
@@ -292,6 +287,7 @@ $('#subt').text(getSubt());
             $('#email2Err').text() !== ''){
                 event.preventDefault();
                 alert('Please fix errors before submitting form.');
+                $('#orderErr').text('Please fix errors before submitting form.');
             }
     });
 
