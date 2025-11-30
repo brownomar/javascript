@@ -13,6 +13,7 @@ console.log("ready");
         }
         else{
             $('#nameErr').text('');
+            $('#orderErr').text('');
         } 
     });
 
@@ -24,6 +25,7 @@ console.log("ready");
         }
         else{
             $('#addressErr').text('');
+            $('#orderErr').text('');
         }
     });
 
@@ -35,6 +37,7 @@ console.log("ready");
         }
         else{
             $('#cityErr').text('');
+            $('#orderErr').text('');
         } 
     });
 
@@ -48,6 +51,7 @@ console.log("ready");
             var zipRegex = /^\d{5}$/;
             if (zipRegex.test(zipVal)){
                 $('#zipErr').text('');
+                $('#orderErr').text('');
             }else{
                 $('#zipErr').text('Invalid zip. 5 digits. Numbers only.');
             }
@@ -64,13 +68,14 @@ console.log("ready");
             var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
             if (emailRegex.test(emailVal)){
                 $('#emailErr').text('');
+                $('#orderErr').text('');
             }else{
                 $('#emailErr').text('Invalid email.');
             }
         }      
     });
 
-    //address field required
+    //shipping address field required
     $('#shipaddr').blur(function(){
         var shipaddrVal = $(this).val();
         if (shipaddrVal === ''){
@@ -78,10 +83,11 @@ console.log("ready");
         }
         else{
             $('#shipaddrErr').text('');
+            $('#orderErr').text('');
         }
     });
 
-    //city field required
+    //shipping city field required
      $('#shipcity').blur(function(){
         var shipcityVal = $(this).val();
         if (shipcityVal === ''){
@@ -89,6 +95,7 @@ console.log("ready");
         }
         else{
             $('#shipcityErr').text('');
+            $('#orderErr').text('');
         } 
     });
     //shipping zip field required
@@ -102,6 +109,7 @@ console.log("ready");
             var shipzipRegex = /^\d{5}$/;
             if (shipzipRegex.test(shipzipVal)){
                 $('#shipzipErr').text('');
+                $('#orderErr').text('');
             }else{
                 $('#shipzipErr').text('Invalid zip. 5 digits. Numbers only.');
             }
@@ -117,6 +125,7 @@ console.log("ready");
             var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
             if (emailRegex.test(email2Val)){
                 $('#email2Err').text('');
+                $('#orderErr').text('');
             }else{
                 $('#email2Err').text('Invalid email.');
             }
@@ -290,5 +299,5 @@ $('#subt').text(getSubt());
                 $('#orderErr').text('Please fix errors before submitting form.');
             }
     });
-
+//clear erro message on successful 
 });
