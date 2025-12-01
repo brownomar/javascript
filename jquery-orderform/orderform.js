@@ -149,7 +149,7 @@ console.log("ready");
 
 //choose sales tax by selected state: tx=.08, all others = 0
     function getTax (){
-        var state = $('#state').val();
+        var state = $('#shipstate').val();
         var salestax = 0;
         if (state === 'TX'){
             salestax = 0.08;
@@ -248,7 +248,7 @@ console.log("ready");
 $('#subt').text(getSubt());
 
 //update sales tax when state changes
-    $('#state').change(function(){
+    $('#shipstate').change(function(){
         var subtotal = parseFloat($('#subt').text()) || 0;
         var salestaxRate = getTax();
         var salestax = (subtotal * salestaxRate).toFixed(2);
