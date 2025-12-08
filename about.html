@@ -3,8 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="js.css">
-
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="about.js"></script>
 </head>
 <body>
     <header>
@@ -12,9 +13,9 @@
         <div>
         <nav id="top-nav">
 			<ul>
-				<li><a href="/index.html">Home</a></li>
-				<li><a href="test.html">Test Page</a></li>
-				<li><a href="quotes.html">Quotes Page</a></li>
+				<li><a href="/index.html">Home</a> |</li>
+				<li><a href="test.html">Test Page</a> |</li>
+				<li><a href="quotes.html">Quotes Page</a> |</li>
 				<li><a href="www.google.com">Google</a></li>
 			</ul>
 		</nav>
@@ -44,6 +45,45 @@
                 <p>We have learned so much in a fairly short period of time.
                 We've learned basic HTML, CSS, a bit of JavaScript, and jQuery.
                 Below are some examples of what we've learned.</p>
+                <div>
+                    <h2>CSS Class and ID Example</h2>
+                    <div class="somepadding" id="backgroundchange">
+                        <p>I learned to use a class and an ID to style elements from the css file.
+                        In this case, calling the class adds padding around the text, and formating for the backgroundchange ID changes
+                        the background color, adds a red border, and rounds the corners for any element that shares the ID.</p>
+
+                </div>
+                <div>
+                    <h2>JavaScript Scripting Basic Example</h2>
+                    <p>You can write paragraphs directly to the page:</p><script>
+                        document.write("<p>This paragraph was added using JavaScript's document.write() method.</p>");
+                    </script>
+                </div>
+                <div>
+                    <h2>jQuery Effect Examples</h2>
+                    <button id="hideButton">Hide Text</button>
+                    <button id="showButton">Show Text</button>
+                    <p id="textToHide">This text can be hidden or shown using the buttons above.</p>
+                </div>
+                <div>
+                    <h2>jQuery Event Examples</h2>
+                    <button id="eventButton">Click Me!</button>
+                    <button id="eventButton2">Double Click Me!</button>
+                    <button id="showTextButton">Show Text</button>
+                    <p id="eventText">This text will change when you click the button above.</p>
+                </div>
+                <div>
+                    <h2>jQuery Image Manipulation</h2>
+                    <div>
+                        <h3>Image Thumbnail</h3>
+                        <p>Hover or Click</p>
+                        <span id="thumbspan">                            
+                            <img class="thumbnail" src="jquery-images/magenta_daisy_mum.jpg" alt="magenta daisy mum thumbnail">
+                        </span>
+                    </div>
+                    
+                    <br>
+                </div>
 
             </main>
             </div>
